@@ -1,0 +1,123 @@
+name: GameDaemon
+main: ru.Baalberith.GameDaemon.GD
+description: '§eС§6е§eр§6в§eе§6р §eп§6е§eр§6е§eз§6а§eг§6р§eу§6з§eи§6т§eс§6я §eч§6е§eр§6е§eз §65 §eм§6и§eн§6у§eт §6[§ev§62§e.§66§e]'
+version: 2.6
+website: truerpg.su
+author: Kronos
+# depend: [mcMMO]
+softdepend: [MultiWorld, HolographicDisplays, Essentials, mcMMO]
+commands:
+  gamedaemon:
+    description: Main command of the plugin.
+    permission: gd.gd
+    usage: /gamedaemon
+    aliases: [gsm, gd]
+  newbie:
+    description: Newbie command.
+    usage: /newbie
+  player-info:
+    description: Info about your character.
+    usage: /player-info
+    aliases: [pi]
+  account-info:
+    description: Info about your account.
+    usage: /account-info
+    aliases: [ai]
+  roll:
+    description: Roll a random number to chat for 1 to 100.
+    usage: /roll
+  pvp:
+    description: Info about your pvp rating.
+    usage: /pvp
+  mmoboost:
+    description: mcMMO skill boost.
+    usage: /mmoboost <skillname>
+  menu:
+    description: Player menu.
+    usage: /menu
+  menubuilder:
+    description: Player menu builder.
+    usage: /menubuilder
+    aliases: [mb]
+  mute:
+    description: Short mute command.
+    usage: §eПомощь по командам - §6/mute help
+    aliases: [mm, ьгеу, ьь]
+  unmute:
+    description: Short mute command.
+    usage: §eПомощь по командам - §6/mute help
+    aliases: [umm, um, гтьгеу, гьь, гь]
+  tojail:
+    description: Command for violance.
+    usage: /tojail
+    aliases: [tj]
+  unjail:
+    description: Command for violance.
+    usage: /unjail (player)
+  jail:
+    description: Command for violance.
+    usage: /jail
+  intro:
+    description: Command for intro.
+    usage: /intro (player)
+  convert:
+    description: Convert low value voins to high value coins.
+    usage: /convert
+    aliases: [conv, con, c]
+  rpg:
+    description: Teleportation player to rpg world.
+    usage: /rpg
+    aliases: [rgp]
+  sharpening:
+    description: Open sharpening inventory.
+    usage: /sharpening
+    aliases: [sharp]
+  list-writer:
+    description: ''
+    usage: /list-writer
+    aliases: [l-w]
+  heal:
+    usage: /heal
+    aliases: [h]
+  food:
+    usage: /food
+  warp:
+    usage: §eПомощь по командам - §6/warp help
+    aliases: [цфкз]
+  setwarp:
+    usage: §eПомощь по командам - §6/warp help
+    aliases: [swarp, addwarp, awarp, createwarp]
+  delwarp:
+    usage: §eПомощь по командам - §6/warp help
+    aliases: [dwarp, removewarp, rwarp, deletewarp]
+  warps:
+    usage: /warps [страница]
+  request:
+    usage: У вас нет ожидающих запросов.
+  test:
+    usage: Команда test
+    aliases: [t]
+  levelmenu:
+    description: ''
+  level:
+    description: ''
+  install:
+    description: ''
+  party:
+    usage: §eПомощь по командам групп - §6/party help
+    description: ''
+    aliases: [trp, tparty, trueparty]
+  dungeons:
+    usage: §eПомощь по командам данжей - §6/dungeons help
+    description: ''
+    aliases: [d, dung, du]
+  worldquests:
+    usage: §eПомощь по командам мировых квестов - §6/worldquests help
+    description: ''
+    aliases: [wq, worldq, worldquest]
+  mail:
+    usage: §eПомощь по командам почтового ящика - §6/mail help
+    description: ''
+    aliases: [ml, ьфшд]
+    
+    

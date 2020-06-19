@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/MaxBans.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/mcMMO.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/PermissionsEx-1.22.10.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/Vault1.6.11.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/Thermos.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/HolographicDisplays.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/ServerAssistant.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/spigot-1.7.10-SNAPSHOT-b1657.jar"/>
+	<classpathentry kind="lib" path="D:/PluginsWorkspace/worldedit-bukkit-6.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

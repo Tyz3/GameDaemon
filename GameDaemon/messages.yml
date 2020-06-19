@@ -1,0 +1,768 @@
+# All placeholders []: player,balance,joins,muted,jailed,kills,
+# deaths,dateFirstJoin,timePlayingSpent,rating,ipJoin,ipQuit,
+# dateJoin,dateQuit.
+
+other:
+  config_reload: '&aConfig has been reloaded.'
+  menu_reload: '&aMenu has been reloaded.'
+  enable: '&e[GameStatisticsManager] has been enabled.'
+  disable: '&e[GameStatisticsManager] has been disabled.'
+  logFileDoesNotExists: '&4Log file does not exists.'
+  bukkitPlayerNotExists: '&4&lИгрок {player} не существует.'
+  not-enough-args: '&cНедостаточно аргументов.'
+  label: '&8[&4{label}&8]'
+  join:
+  - '&aВы вошли под аккаунтом: &2[player]'
+  - '&aНапиши &2/rpg&a, чтобы попасть в RPG мир.'
+  has-cooldown: '&7Вам нужно подождать ещё &a{S}&7 сек.'
+  warmUpSession: '&7Выполение действия через &a{S}&7...'
+  warmUpCancelled: '&cДействие отменено из-за движения.'
+  jsonWaitingRequest: 'json: ["",{"text":"Вам пришёл запрос на действие. "},{"text":"[ПОДТВЕРДИТЬ]","color":"green","clickEvent":{"action":"run_command","value":"{command}"},"hoverEvent":{"action":"show_text","value":"{description}"}}]'
+  # jsonWaitingRequest: '&fВам пришёл запрос на действие. &a[ПОДТВЕРДИТЬ]'
+  requestCancelled: '&fВремя для ответа на запрос &cистекло&f.'
+  inspire:
+    add: 'Вы получили [points] ед. воодушевления.'
+  
+  no-permission: '&cУ вас недостаточно прав.'
+
+cloudMail:
+  label: 'Merilla-00'
+  notification:
+  - 'json: ["", {"text":"&aMerilla-00 &8> &7Я нашла для вас непрочитанные сообщения, посмотрите?","color":"gray","clickEvent":{"action":"run_command","value":"/mail"},"hoverEvent":{"action":"show_text","value":"&bНажми, чтобы посмотреть"}}]'
+  - 'json: ["", {"text":"&aMerilla-00 &8> &7Мне кажется, у вас появилась новая почта, хотите взглянуть?","color":"gray","clickEvent":{"action":"run_command","value":"/mail"},"hoverEvent":{"action":"show_text","value":"&bНажми, чтобы посмотреть"}}]'
+  - 'json: ["", {"text":"&aMerilla-00 &8> &7И вот я снова напоминаю вам о непрочтённых сообщениях :)","color":"gray","clickEvent":{"action":"run_command","value":"/mail"},"hoverEvent":{"action":"show_text","value":"&bНажми, чтобы посмотреть"}}]'
+  - 'json: ["", {"text":"&aMerilla-00 &8> &7Если вы не прочтёте свою почту, я за себя не ручаюсь, вот выйдете из игры и...","color":"gray","clickEvent":{"action":"run_command","value":"/mail"},"hoverEvent":{"action":"show_text","value":"&bНажми, чтобы посмотреть"}}]'
+  
+  emptyMailbox: '&7Почтовый ящик пуст.'
+  
+  messageSend: '&aMerilla-00 &8> &7Я отправила ваше сообщение игроку &a{player}&7.'
+  itemSend: '&aMerilla-00 &8> &7Я отправила ваш предмет игроку &a{player}&7.'
+  
+  requiredItemInHand: '&aMerilla-00 &8> &сВам нужен предмет в руках, чтобы его отправить.'
+  mailboxNotExists: '&aMerilla-00 &8> &cЯ не смогла найти почтовый ящик с таким именем. Может ты помнишь начало названия, а я его допишу?'
+  
+  mailboxTitle: ' &7=========== {label} [&aВаш почтовый помощник&8] &7==========='
+  
+  help:
+    title: ' &7=========== {label} [&aПомощь по командам&8] &7==========='
+    default:
+    - '&9&l> &e/&6mail &7- &eПосмотреть список ваших сообщений.'
+    # - '&9&l> &e/&6mail page &e<&6стр&e> &7- &eПоказать страницу почтового ящика.'
+    moder:
+    - '&4&l> &e/&6mail send &e<&6player&e> <&6message&e> &7- &eОтправить сообщение.'
+    - '&4&l> &e/&6mail item &e<&6player&e> <&6message&e> &7- &eОтправить сообщение с предметом.'
+    admin:
+    - '&4&l> &e/&6mail &e<&6player&e> &7- &eПосмотреть письма игрока.'
+    # - '&4&l> &e/&6mail &e<&6player&e> &6page &e<&6стр&e> &7- &eПоказать страницу почты игрока.'
+    # - '&4&l> &e/&6mail list &7- &eПоказать все существующие почтовые ящики.'
+    
+
+restart-server:
+  timer: 10
+  message: '&e[&4Broadcast&e] &2Рестарт через [time] [format].'
+
+worldQuests:
+  label: 'WorldQuest'
+  
+  rewardReceived: 'json: ["", {"text":"{label}&7 Вы попали в топ мирового квеста и заслужили награду. Проверьте свою почту.","color":"gray","clickEvent":{"action":"run_command","value":"/mail"},"hoverEvent":{"action":"show_text","value":"&bНажми, чтобы открыть почту"}}]'
+  rewardMailMessage: 'Вы заняли достойное место, выполняя мировой квест, чтобы получить за это приз!'
+  
+  supplier:
+    name: 'Снабженец'
+    dropped: '{label}&7 Вы успешно сдали груз и получили награду.'
+    noLocation: '{label}&7 Это не подходящее место для сброса.'
+    
+    hologram:
+      title: '&e{name}'
+      status: '&aТоваров получено: &b{now}&a/&b{max}'
+      duration: 'До завершения: {D}д {H}:{M}`{S}.'
+      # description: '' описание квеста здесь
+  miner:
+    name: 'Добытчик'
+    hologram:
+      title: '&e{name}'
+      duration: 'До завершения: {D}д {H}:{M}`{S}.'
+      # description: '' описание квеста здесь
+      topTitle: '&b&nТоп-{size} игроков'
+      topPrize: '&6[{place}] &f{player} &2: &6{score}'
+      topRaw: '&e[{place}] &f{player} &2: &e{score}'
+      
+  artisan:
+    name: 'Ремесленник'
+    hologram:
+      title: '&e{name}'
+      duration: 'До завершения: {D}д {H}:{M}`{S}.'
+      # description: '' описание квеста здесь
+      topTitle: '&b&nТоп-{size} игроков'
+      topPrize: '&6[{place}] &f{player} &2: &6{score}'
+      topRaw: '&e[{place}] &f{player} &2: &e{score}'
+      
+  mercenary:
+    name: 'Наёмник'
+    hologram:
+      title: '&e{name}'
+      duration: 'До завершения: {D}д {H}:{M}`{S}.'
+      # description: '' описание квеста здесь
+      topTitle: '&b&nТоп-{size} игроков'
+      topPrize: '&6[{place}] &f{player} &2: &6{score}'
+      topRaw: '&e[{place}] &f{player} &2: &e{score}'
+      
+
+dungeons:
+  label: 'Dungeons'
+  noDungeon: '{label}&7 Не найден уровень данжа &f{name}&7 для &a{size}Ур&7.'
+  confirmed: '{label}&7 Вы подтвердили участие.'
+  leaveInCombat: '{label}&7 Вы не можете выйти из данжа, пока вы в бою.'
+  requirement:
+    online: '{label}&7 Некоторые участники вашей группы не в сети. Данж: &f{name}&7 (&a{size}Ур&7).'
+    distance: '{label}&7 Все участники вашей группы должны находиться рядом. Данж: &f{name}&7 (&a{size}Ур&7).'
+    key: '{label}&7 У некоторых участников вашей группы нет ключа. Данж: &f{name}&7 (&a{size}Ур&7).'
+    combat: '{label}&7 Некоторые участники вашей группы находятся в режиме боя. Данж: &f{name}&7 (&a{size}Ур&7).'
+    owner: '{label}&7 Вы должны быть &cвладельцем&7 группы, чтобы войти в данж.'
+    completeness: '{label}&7 В группе появился новый игрок, запрос отменён.'
+  partyMismatch: '{label}&7 Игрок &5{player}&7 больше не участник группы, запрос отменен.'
+  noSession: '{label}&7 Нет ожидающих запросов'
+  busy: '{label}&7 У данжа &f{name}&7 (&a{size}Ур&7) нет свободных слотов. Подождите пока один освободится.'
+  confirmRequirement: '{label}&7 Вам нужно находиться рядом с телепортатором, не быть в режиме боя и иметь ключ данжа &f{name}&7 (&a{size}Ур&7).'
+  sessionTimedOut: '{label}&7 Отменена телепортация в данж &f{name}&7 (&a{size}Ур&7). Время вышло.'
+  noParty: 'json: ["",{"text":"У вас нет группы. Нажмите "},{"text":"здесь","color":"green","clickEvent":{"action":"run_command","value":"/trueparty createrandom"}},{"text":" чтобы создать.","color":"none"}]'
+  # cancelled: '{label}&7 Вы отменили телепортацию в данж &f{name}&7 (&a{size}Ур&7).'
+  cancelledAlert: '{label}&7 Отменена телепортация в данж &f{name}&7 (&a{size}Ур&7).'
+  playerReady: '{label}&7 Игрок &5{player}&7 подтвердил телепортацию в данж &f{name}&7 (&8{now}&7/&8{max}&7).'
+  joinRequestSendedToMembers: '{label}&7 Запрос на вход в данж &f{name}&7 (&a{size}Ур&7) отправлен вашим друзьям.'
+  returnKey: '{label}&7 Кто-то покинул группу, телепортация отменена, ключи вернулись в инвентарь.'
+  returnKeyFromOfflines: '{label}&7 Вы получили дополнительный ключ &5x{amount}&7 за тех, кто не в сети.'
+  gameEndedTimeout: '{label}&7 Время, отведённое на прохождение данжа, закончилось.'
+  selfCooldown: '{label}&7 Вы сможете присоединиться к данжу &f{name}&7 через {H} ч. {M} мин. {S} cек.'
+  rewarded: '{label}&7 Вы получили награду за прохождение данжа &f{name}&7.'
+  rewardedFromAbsent: '{label}&7 Вы получили дополнительную награду &5x{amount}&7 за других игроков, который покинули группу.'
+  
+  cannotJoinCombat: '{label}&7 Вы не можете присоединиться к данжу в режиме боя.'
+  cannotLeaveCombat: '{label}&7 Вы не можете покинуть данж в режиме боя.'
+  joinCooldownOther: '&{label}&7 Игрок &5{player}&7 сможет присоединиться к этому данжу через {H} ч. {M} мин. {S} cек.'
+  leaveConfirm: 'json: ["",{"text":"Покинуть данж {name}&f? "},{"text":"Подтвердить","color":"green","clickEvent":{"action":"run_command","value":"/trueparty dungeon leave"}}]'
+  
+  gameStartedAdminAlert: 'json: ["",{"text":"{size} игроков зашли в данж {name}. "},{"text":"Телепортироваться.","color":"green","clickEvent":{"action":"run_command","value":"/tc d tp {id} {layer}"}}]'
+  
+  hologram:
+    title: '&e{name}'
+    status: 'Групп сейчас в данже: &2{now}&f/&2{max}'
+    topTitle: '&b&nТоп-{size} лидеров групп'
+    topFormat: '&a{player} &6: &a{time} сек {millis} мс'
+
+dropBags:
+  broadcastRareChest: 'json: ["",{"text":"[","color":"dark_gray"},{"text":"!","color":"dark_red"},{"text":"] ","color":"dark_gray"},{"text":"{player}","bold":true,"color":"dark_red"},{"text":" заполучил редкий предмет: ","color":"yellow"},{"text":"[{displayName} x{amount}]","color":"dark_purple","hoverEvent":{"action":"show_item","value":"{id:{id}, Damage:{data},tag:{display:{Lore:{lore}}, ench:{enchantments}}}"}},{"text":" с шансом ","color":"yellow"},{"text":"{chance}%","bold":true,"color":"green"},{"text":", из сундука: ","color":"yellow"},{"text":"[{DISPLAYNAME}]","color":"dark_purple","hoverEvent":{"action":"show_item","value":"{id:{ID}, Damage:{DATA}}"}},{"text":".","color":"yellow"}]'
+  broadcastRareBag: 'json: ["",{"text":"[","color":"dark_gray"},{"text":"!","color":"dark_red"},{"text":"] ","color":"dark_gray"},{"text":"{player}","bold":true,"color":"dark_red"},{"text":" заполучил редкий предмет: ","color":"yellow"},{"text":"[{displayName} x{amount}]","color":"dark_purple","hoverEvent":{"action":"show_item","value":"{id:{id}, Damage:{data},tag:{display:{Lore:{lore}}, ench:{enchantments}}}"}},{"text":" с шансом ","color":"yellow"},{"text":"{chance}%","bold":true,"color":"green"},{"text":", из сумки: ","color":"yellow"},{"text":"[{DISPLAYNAME}]","color":"dark_purple","hoverEvent":{"action":"show_item","value":"{id:{ID}, Damage:{DATA}}"}},{"text":".","color":"yellow"}]'
+  personal: '&7Вы получили предмет(ы) с сумки.'
+  emptyBag: '&7Вам не повезло. В этой сумке ничего не оказалось.'
+  hasKey: '&7Для получения вещей с этого предмета вам нужен ключ.'
+limitation-blocks:
+  limit-reached: '&cДанный блок больше нельзя поставить в этом чанке.'
+
+worldAnchors:
+  rules:
+  - 'Минимальное кол-во игроков до старта призыва: 3 игрока.'
+  - 'Радиус проверки игроков от центра: 24 блока'
+  - 'Время ожидания игроков до начала волны: 15 минут.'
+  - 'Длительность каждой волны около 10 минут.'
+  broadcast: 'json: ["",{"text":"[","color":"blue"},{"text":"ВНИМАНИЕ","color":"aqua"},{"text":"]","color":"blue"},{"text":" &cМировой якорь \"{title}\" &4(x{X} y{Y} z{Z})&c готовится к запуску (&4{M} мин&c). ","color":"red"},{"text":"[Условия запуска]","color":"dark_purple","hoverEvent":{"action":"show_text","value":{rules}}}]'
+  cancel: '&9[&bВНИМАНИЕ&9] &cМировой якорь "{title}" остановил призыв, в связи с нехваткой игроков.'
+  close: 'json: ["",{"text":"[","color":"blue"},{"text":"ВНИМАНИЕ","color":"aqua"},{"text":"]","color":"blue"},{"text":" Мировой якорь \"{title}\" успешно закрыт, ","color":"red"},{"text":"[участники]","color":"dark_purple","hoverEvent":{"action":"show_text","value":{participants}}},{"text":".","color":"red"}]'
+  activated: '&9[&bВНИМАНИЕ&9] &cМировой якорь "{title}" начал призыв.'
+  starting: '&7Мировой якорь "&6{title}&7" начал призыв. Волна &5#{waveNumber}&7.'
+  summonBoss: '&7Мировой якорь "&a{title}&7" призвал &cБОССА&7. Волна &5#{waveNumber}&7.'
+  timeout: '&9[&bВНИМАНИЕ&9] &cМировой якорь "&6{title}&7" остановил призыв, в связи с окончанием времени.'
+  announce: '&7Волна &5#{waveNumber}&7 начнётся через &a{S}&7 сек...'
+  duration: '&7Мировой якорь "&6{title}&7" остановит призыв через &a{S}&7, если вы не поторопитесь.'
+  reward: '&aВы получили награду за закрытие мирового якоря.'
+warps:
+  common:
+    notExists: '&7Варп с названием {warp} не существует.'
+    public: '&8<&a&l✔&8>'
+    private: '&8<&c&l✖&8>'
+    notOwner: '&cВы не являетесь владельцем этого варпа (&4{warp}&c).'
+    hidden: '&8<&a&lСкрыт&8>'
+    shown: '&8<&c&lВиден&8>'
+  warp:
+    help:
+      title: ' &7=========== {label} [&aПомощь по командам&8] &7==========='
+      default:
+      - '&9&l> &e/&6warps &e[&6стр&e] &7- &eВаши варпы и приглашённые.'
+      - '&9&l> &e/&6setwarp &e<&6назв&e> &7- &eСоздать варп.'
+      - '&9&l> &e/&6delwarp &e<&6назв&e> &7- &eУдалить варп.'
+      - '&9&l> &e/&6warp list &e[&6стр&e] &7- &eСписок всех варпов.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6info  &7- &eИнформация о варпе.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &7- &eТелепортироваться на варп.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6desc &e<&6описание&e> &7- &eУстановить описание варпа.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6invite &e<&6игрок&e> &7- &eПригласить игрока.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6uninvite &e<&6игрок&e> &7- &eУдалить приглашение.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6blacklist &e<&6игрок&e> &7- &eЗанести в чёрный список.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6unblacklist &e<&6игрок&e> &7- &eУдалить из списка.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6withdraw &e<&6кол-во&e> &7- &eСнять монеты с баланса.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6fee &e<&6кол-во&e> &7- &eУстановить плату за телепорт.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &e(&6public&e/&6private&e) &7- &eУстановить режим доступа.'
+      - '&9&l> &e/&6warp &e<&6назв&e> &6movehere &7- &eПереместить точку телепорта.'
+      admin:
+      - '&4&l> &e/&6warp &e<&6назв&e> <&6игрок&e> &7- &eТелепортировать игрока на варп.'
+      - '&4&l> &e/&6warp &e<&6назв&e> &e(&6hide&e/&6show&e) &7- &eСкрыть/Показать варп в общем списке.'
+    info:
+      title: ' &7=========== {label} [&aИнформация о варпе&8] &7==========='
+      default:
+      - '&9&l> &fНазвание: &6{warp}'
+      - '&9&l> &fОписание: &8{description}'
+      - '&9&l> &fВладелец: &c{owner}'
+      - '&9&l> &fПосещений за неделю: &2{visits} чел.'
+      - '&9&l> &fСтатус варпа: {public}'
+      - '&9&l> &fПлата за телепортацию (взнос): &3{fee} с.м.'
+      owner:
+      - '&6&l> &fПриглашённые (&7{nowW}&f/&7{maxW}&f): &7{whitelist}'
+      - '&6&l> &fЧёрный список (&7{nowB}&f/&7{maxB}&f): &8{blacklist}'
+      - '&6&l> &fБаланс варпа (серебряные монеты): &3{bank} с.м.'
+      admin:
+      - '&4&l> &fВидимость для всех: {hide}'
+    whitelist:
+      alreadyIn: '&7Этот игрок уже в списке приглашённых варпа &6{warp}&7.'
+      add: '&7Вы пригласили игрока &a{player}&7 на ваш варп &6{warp}&7.'
+      remove: '&7Игрок &a{player}&7 удалён из списка приглашённых варпа &6{warp}&7.'
+      removeFail: '&cИгрок &4{player}&c не приглашён на ваш варп (&4{warp}&c).'
+    blacklist:
+      alreadyIn: '&7Этот игрок уже в чёрном списке варпа &6{warp}&7.'
+      add: '&7Вы добавили игрока &a{player}&7 в чёрный список варпа &6{warp}&7.'
+      remove: '&7Игрок &a{player}&7 удалён из чёрного списка варпа &6{warp}&7.'
+      removeFail: '&cИгрока &4{player}&c нет в чёрном списке вашего варпа (&4{warp}&c).'
+    withdrawMoney: '&7Выдано {amount} монет в инвентарь, остаток баланса {bank}.'
+    fee:
+      notEnough: '&cУ вас нет &4серебряных монет&c для взноса. Нужно &4x{amount}&c в СТАКЕ.'
+      description: 'На этот варп стоит &cденежный взнос&f за\nтелепортацию &3серебряная монета &fx{amount}'
+      set: '&7Плата за телепортацию на варп &6{warp}&7, установлена: &3{fee} с.м.'
+      setThreshold: '&cДопустимые значения: &4[{setMin} - {setMax}]&c.'
+      get: '&7Получено серебряных монет (&6{warp}&7): &3{amount} с.м.'
+      getThreshold: '&cДопустимые значения: &4[{getMin} - {getMax}]&c.'
+      take: '&fТелепортация на варп &6{warp}&f. Комиссия в серебряных монетах: &3{fee} с.м.'
+    accessMode: '&7Для варпа &6{warp}&7 установлен новый режим доступа: {public}&7.'
+    hideMode: '&7Для варпа &6{warp}&7 установлен новый режим видимости: {hide}&7.'
+    tpFailure: '&7Телепортация не удалась.'
+    descriptionSet: '&7Для варпа &6{warp} &7установлено новое описание.'
+    movehere: '&7Установлена новая точка телепортации для варпа &6{warp}&7.'
+    inBlacklist: '&cВы находитесь в чёрном списке этого варпа (&4{warp}&c).'
+    notInWhitelist: '&cВас нет в белом списке этого варпа (&4{warp}&c).'
+    
+    blacklistLimit: '&cВы больше не можете добавлять игроков в blacklist.'
+    whitelistLimit: '&cВы больше не можете добавлять людей в whitelist.'
+    list:
+      title: ' &7======== {label}[&aСписок всех варпов&8] [&7стр.&b{page}&8] &7========'
+      all: '&9&l>> {public} &6{warp} &7Владелец: &c{owner}&7 Взнос: &3{fee} с.м.'
+      your: '&d&l>> {public} &6{warp} &7Владелец: &dВы&7 Взнос: &3{fee} с.м.'
+      invited: '&b&l>> {public} &6{warp} &7Владелец: &c{owner}&7 Взнос: &3&o{fee} с.м.'
+      hidden: '&8&l>> {public} &6{warp} &7Владелец: &c{owner}&7 Взнос: &3{fee} с.м.'
+      nothing: '&7Нечего показать.'
+  warps:
+    title: ' &7======== {label}[&aСписок варпов с вами&8] [&7стр.&b{page}&8] &7======='
+    raw: '&a&l>> &6{warp} {public} &7Посещений: &2{visits} чел.&7 Взнос: &3{fee} с.м. &d&lваш'
+    invited: '&b&l>> &6{warp} {public} &7Владелец: &c{owner}&7 Взнос: &3&o{fee} с.м.'
+    nothing: '&7У вас нет варпов.'
+  setwarp:
+    disallowedWorld: '&cВ этом мире запрещено ставить варпы.'
+    successfully: '&7Варп с названием &a{warp}&7 успешно создан ({public}&7).'
+    alreadyExists: '&cТакой варп уже существует.'
+    nameFail: '&cНедопустимое название варпа.'
+    lengthFail: '&cНедопустимая длина названия. Разрешено [1-32].'
+    publicLimit: '&cДля вас достигнут лимит по установке публичных варпов.'
+    privateLimit: '&cДля вас достигнут лимит по установке приватных варпов.'
+    totalLimit: '&cДля вас достигнут лимит по установке любых варпов.'
+  delwarp:
+    successfully: '&7Варп &5{warp}&7 удалён.'
+    bankNotEmpty: '&cНельзя удалить варп, пока его банк не пустой. {bank}'
+  holographic:
+    title: '&4[&c{warp}&4]'
+    visitors: '&bПосетителей за неделю: {visitors}'
+    balance: '&7Баланс варпа: {balance}₮'
+  label: 'TRPGWarps'
+  
+  
+newbies:
+  expired: '&c&lМирный режим завершил своё действие, теперь вы уязвимы для других игроков.'
+  help: '&7Мирный режим действует ещё &a{H} &7ч. &a{M} &7мин. &a{S} &7сек. Чтобы выключить мирный режим -> &c/newbie {player}&7.'
+  notNewbie: '&7Вы уже не новичок.'
+  broadcast: '&9[&bВНИМАНИЕ&9] &cМирный режим игрока &4{player}&c больше не действует.'
+  potionBlock: '&cВ мирном режиме вы не можете использовать взрывные зелья.'
+  damageBlock: '&cВ мирном режиме вы не можете наностить урон другим игрокам.'
+  join: '&7На вас действует мирный режим новичка. Действие прекратится через &a{H} &7ч. &a{M} &7мин. &a{S} &7сек. Чтобы выключить мирный режим -> &c/newbie {player}&7.'
+rpg-spawn:
+  list: '&4&l> &a[title] &2[world] x:[X] y:[Y] z:[Z]'
+  info:
+  - '&4&l> &2/&arpg &alist &a- &2Список всех точек телепортаций.'
+  - '&4&l> &2/&arpg &achange &2<&aplayer&2> <&atitle&2> &a- &2Изменить игроку точку
+    телепортации в rpg.'
+  - '&4&l> &2/&arpg &aadd &2<&atitle&2> &a- &2Добавить точку телепортации в rpg по вашим координатам.'
+  - '&4&l> &2/&arpg &aremove &2<&atitle&2> &a- &2Удалить точку спавна.'
+  exec: '&8[&4TRPGSpawn&8] &7Вы телепортированы в RPG мир "&a[title]&7".'
+  add: '&8[&4TRPGSpawn&8] &7Точка телепортации "&a[title]&7" (&2[world] &4x:[X] &4y:[Y] &4z:[Z]&7) добавлена.'
+  change: '&8[&4TRPGSpawn&8] &7Точка телепортации в RPG изменена для &5[player]&7 на "&a[title]&7" (&2[world] &4x:[X] &4y:[Y] &4z:[Z]&7).'
+  not-exists: '&8[&4TRPGSpawn&8] &7Точка телепортации в "&a[title]&7" не существует.'
+  already-exists: '&8[&4TRPGSpawn&8] &7Точка телепортации в "&a[title]&7" уже существует.'
+  remove: '&8[&4TRPGSpawn&8] &7Точка телепортации в "&a[title]&7" удалена.'
+  point-deleted: '&8[&4TRPGSpawn&8] &7Точка спавна "&a[title]&7" была удалена разработчиком. Обратитесь в &4Discord &7или в &4ВК&7.'
+
+menu:
+  builder:
+    healthBoostRaw: '&8[&4+30% за каждого доп. игрока&8]'
+    strengthBoostRaw: '&8[&4+10% за каждого доп. игрока&8]'
+    worldBoss: '&aМировой босс'
+    bossDisplayname: '[{level}] {title}'
+    bossLore:
+      - '{worldBoss}'
+      - '&7Ступень босса: &a{stage}'
+      - '&7Кулдаун данжа: &aXX мин.'
+      - ''
+      - '&7Здоровье: &a{health} ед. {healthBoostRaw}'
+      - '&7Регенерация в бою: &a{regen}'
+      - '&7Сила атаки: &a{strength} {strengthBoostRaw}'
+      - '&7Задержка атаки: &aXXс'
+      - '&7Дебафф: &aотсутствует'
+      - ''
+      - '&7Сопротивление к дальнему урону: &aXX%'
+      - '&7Сопротивление к ближнему урону: &aXX%'
+      - ''
+      - '&7Боевые особенности:'
+      - '&9 - &aотсутствуют'
+      - ''
+      - '&7Минимальное кол-во игроков: &a{minPlayers}'
+    mobDisplayname: '[{level}] {title}'
+    mobLore:
+      - '&7Ступень моба: &a{stage}'
+      - ''
+      - '&7Здоровье: &a{health} ед.'
+      - '&7Регенерация в бою: &a{regen}'
+      - '&7Сила атаки: &a{strength}'
+      - '&7Задержка атаки: &aXXс'
+      - '&7Дебафф: &aотсутствует'
+      - ''
+      - '&7Сопротивление к дальнему урону: &aXX%'
+      - '&7Сопротивление к ближнему урону: &aXX%'
+    dropLoot:
+      dropChance: '&eШанс выпадения: &9{dropChance}%'
+    label: 'MenuBuilder'
+    nothingShow: '&cНечего показать.'
+    help:
+      info:
+      - ' &7=========== {label} [&aПомощь по командам&8] &7=========='
+      - '&9&l> &e/&6mb add container &e<&6контейнер&e> &e<&6заголовок&e> &e<индив?:&6true&e/&6false&e> &7- &eДобавить контейнер.'
+      - '&9&l> &e/&6mb add element &e<&6контейнер&e> &e<&6элемент&e> &e<&6тип&e> &e<&6позиция&e> &e<&6возврат&e> &7- &eДобавить элемент в контейнер *держи в руках предмет для иконки*.'
+      - '&9&l> &e/&6mb edit container &e<&6контейнер&e> &e<&6свойство&e> &e<&6add&e/&6remove&e/&6set&e/&6clear&e> &e[&6значение&e] &7- &eИзменить параметр контейнера.'
+      - '&9&l> &e/&6mb edit element &e<&6контейнер&e> &e<&6элемент&e> &e<&6свойство&e> &e<&6add&e/&6remove&e/&6set&e/&6clear&e> &e[&6значение&e] &7- &eИзменить параметр элемента.'
+      - '&9&l> &e/&6mb clear container &e<&6контейнер&e> &7- &eУдалить контейнер.'
+      - '&9&l> &e/&6mb clear element &e<&6контейнер&e> &e<&6элемент&e> &7- &eУдалить элемент из контейнера.'
+      - '&9&l> &e/&6mb show &e[&6контейнер&e] &e[&6элемент&e] &7- &eПоказать иерархию меню.'
+      type:
+        button:
+          cmds: '&eтип:&6cmds ... &e<&6cmd&e>&6...'
+          boss: '&eтип:&6boss ... &e<&6level&e> &e<&6minPlayers&e> &e<&6ЛКМ&e> &e<&6Shift+ЛКМ&e> &e<World:&6true&e/&6false>'
+          mob: '&eтип:&6mob ... &e<&6level&e> &e<&6minPlayers&e> &e<&6ЛКМ&e> &e<&6Shift+ЛКМ&e>'
+          nextWay: '&eтип:&6nextWay ... &e<&6ЛКМ&e> &e<&6Shift+ЛКМ&e>'
+        skull: '&eтип:&6skull ...'
+        icon: '&eтип:&6icon ...'
+        loot: '&eтип:&6loot &e<&6шанс_дропа&e>'
+    noItemInHand: '&cПредмет не может быть воздухом.'
+    noDisplayname: '&cПредмет должен иметь название.'
+    notExists:
+      container: '&cКонтейнер (&4{container}&c) не существует.'
+      element: '&cЭлемент (&4{element}&c) не существует в контейнере &4{container}&c.'
+      property:
+        element: '&cСвойство (&4{property}&c) не существует в элементе &4{element}&c контейнера &4{container}&c.'
+        container: '&cСвойство (&4{property}&c) не существует в контейнере &4{container}&c.'
+    add:
+      container: '&7Контейнер &a{container}&7 добавлен.'
+      element: '&7Элемент &a{element}&7 с типом &a{type}&7 добавлен в контейнер &a{container}&7.'
+    edit:
+      container: '&7Свойство &a{property}&7 контейнера &a{container}&7 изменено на "&a{value}&7".'
+      element: '&7Свойство &a{property}&7 элемента &a{element}&7 контейнера &a{container}&7 изменено на "&a{value}&7".'
+    clear:
+      container: '&7Контейнер &a{container}&7 удалён.'
+      element: '&7Элемент &a{element}&7 из контейнера &a{container}&7 удалён.'
+      property:
+        container: '&7Свойство &a{property}&7 контейнера &a{container}&7 удалено.'
+        element: '&7Свойство &a{property}&7 элемента &a{element}&7 удалено из контейнера &a{container}&7.'
+command:
+  info: '&6&lInfo command'
+  
+  player-info:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  
+  account-info:
+  - '&e&l=== [&cИнформация об аккаунте&e&l] ==='
+  - ' &aАккаунт: &2{player}'
+  - ' &aДата первого входа: &5{dateFirstJoin}'
+  - ' &aДата текущего входа: &e{dateJoin1}'
+  - '  &2[IP]&a: &b{ipJoin1}'
+  - ' &aИстория входа-выхода на сервере:'
+  - ' &8#1 &e{dateJoin2}&6&l : &e{dateQuit1}' # &2({} м.)'
+  - '  &2[IP]&a: &b{ipJoin2}'
+  - ' &8#2 &e{dateJoin3}&6&l : &e{dateQuit2}' # &2({} м.)'
+  - '  &2[IP]&a: &b{ipJoin3}'
+  - ' &aВходов: &2{joinsAmount}'
+  - ' &aМутов: &2{muteAmount}'
+  - ' &aЗаключений на рудник: &2{imprisonedAmount}'
+  - ' &aПроведено времени в игре: &2{time}'
+  status:
+    online: 'В сети'
+    offline: 'Не в сети'
+  found-account-info:
+  - '&e&l=== [&cИнформация об аккаунте&e&l] ==='
+  - ' &aАккаунт: &2{player} &a[{status}]'
+  - ' &aДата первого входа: &5{dateFirstJoin}'
+  - ' &aИстория входа-выхода на сервере:'
+  - ' &8#1 &e{dateJoin1}&6&l : &e{dateQuit1}' # &2(X м.)'
+  - '  &2[IP]&a: &b{ipJoin1}'
+  - ' &8#2 &e{dateJoin2}&6&l : &e{dateQuit2}' # &2(X м.)'
+  - '  &2[IP]&a: &b{ipJoin2}'
+  - ' &8#3 &e{dateJoin3}&6&l : &e{dateQuit3}' # &2(X м.)'
+  - '  &2[IP]&a: &b{ipJoin3}'
+  - ' &aВходов: &2{joinsAmount}'
+  - ' &aМутов: &2{muteAmount}'
+  - '  &8Замучен: &2{mute}'
+  - ' &aЗаключений на рудник: &2{imprisonedAmount}'
+  - '  &8На руднике: {imprisoned}'
+  - ' &aПроведено времени в игре: &2{time}'
+  
+  
+  roll: '&e%s выбросил &6%d &e[1-100]'
+   
+  does-not-exists: '&8[&4Storage&8] &cЭтот игрок не существует в базе данных.'
+    
+mcmmo-boost:
+  success: '&5&lYou add %d xp for skill %s.'
+  error: '&4&lNot enough boost item.'
+
+violations:
+  mutes:
+    label: 'TRPGMute'
+    help:
+      title: ' &7=========== {label} [&aПомощь по командам&8] &7==========='
+      helper:
+      - '&eСокращение: /&6mute&e -> /&6mm&e; /&6unmute&e -> /&6umm&e, /&6um&e.'
+      - '&9&l> &e/&6mute &e<&6игрок&e> &e<&6аргументы&e> &7- &eЗамутить игрока по указанным причинам.'
+      - '&9&l> &e/&6mute history &e[&6игрок&e] &7- &eИстория мутов своих или другого игрока.'
+      - '&9&l> &e/&6mute &e[&6игрок&e] &7- &eПроверить сколько осталось времени до размута у себя или у другого игрока.'
+      moder:
+      - '&4&l> &e/&6ummute &e<&6игрок&e> &e[&6причина&e] &7- &eРазмутить игрока по причине.'
+      reason: '&2&l> &6{symbol} &7- &e{description} &a({time})'
+    info:
+      error: '&7У этого игрока не было мутов.'
+      title: ' &7========== {label}[&aИстория мутов {player}&8] &7=========='
+      history:
+      - '&2&l> &e[&6{when}&e] Мутил: &6{who}&e Причина: &6{reason}&e Блокировка чата на &6{penalty}&e.'
+      
+    broadcast:
+    - ''
+    - ' Наказание: Блокировка чата'
+    - ' Кому: {violator}'
+    - ' Кто: {whoPunished}'
+    - ' Причина: {reason}'
+    - ' На время: {timeout}'
+    - ''
+    unmute: '&7Блокировка чата снята с &a{player}&7.'
+    alert: '&cВы не можете отправлять сообщения. До снятия блокировки: &4{time}'
+    checkMute: '&cБлокировка чата будет снята через &4{time}'
+    missingMute: '&cБлокировка чата отсутствует.'
+    alreadyMuted: '&7Этот игрок уже замучен по этой причине.'
+    muteCleared: '&5Блокировка чата снята!'
+    incorrectArgs: '&cВ команде присутствуют неправильные аргументы.'
+    description:
+      f: Флуд
+      c: Caps-Lock
+      mf: Массовый флуд
+      po: Попрашайка
+      m: Мат/Оскорбление
+      or: Оскорбление родителей
+      od: Оскорбление разработчиков
+      p: Оскорбление персонала
+      r: Упоминание/Реклама стороних проектов/Пропоганда
+    # dbroadcast: '&4{whoPunished} &6замутил &c{violator} &6по причине: &9{reason}, &6на время: &3{penalty}&6.'
+  jail:
+    label: 'TRPGJail'
+    info:
+      info:
+      - ' &7=========== [funcPrefix] [&aПомощь по командам&8] &7==========='
+      - '&9&l> &e/&6jail check &e[&6игрок&e] &7- &eПроверить информацию о заключённом.'
+      - '&9&l> &e/&6jail back &7- &eВернуть вещи, удалённые перед заключением.'
+      - '&9&l> &e/&6tojail &e<&61-5&e> &e<&6игрок&e> <&6причина&e> &7- &eПосадить игрока на рудник.'
+      info-admin:
+      - '&4&l> &e/&6unjail &e(&6игрок&e) &7- &eОсвободить игрока из рудника.'
+      back: '&eИспользуй: /jail back'
+      check: '&eИспользуй: /jail check &e(&6player&e)'
+      tojail: '&eИспользуй: /tojail (&61&e/&62&e/&63&e/&64&e/&65&e) &e(&6player&e) &e(&6reason&e)'
+      unjail: '&eИспользуй: /unjail &e(&6player&e)'
+    cmd-info: '&7Ваши вещи были помещены во временное хранилище и доступны по команде &4/jail back&7.'
+    check: '&5[punisher] &7заключил игрока &a[violator] &7по причине [reasonLevel] &a[reason]&7 [imprisonedDate].'
+    broadcast: '&5[punisher] &7заключил игрока &a[violator] &7на рудник по причине [reasonLevel] &a[reason]&7.'
+    reason-level: '&7[&4[penalty] уровень&7]'
+    player-not-exist: '&7Игрок &a[player]&7 не существует.'
+    already-in-jail: '&7Игрок &a[player]&7 уже на руднике.'
+    exempt: "&7Вы освобождены с рудника &5[player]&7'ом."
+    player-dont-imprisoned: '&7Игрок &a[player] &7не сидит на руднике.'
+    player-exempted: '&7Игрок &a[player] &7освобождён.'
+    you-no-imprisoned: '&7Вы не заключённый.'
+    you-imprisoned-yet: '&7Вы ещё не освобождены.'
+    jailback-access: '&7Время доступа к инвентарю возврата ограничено (&4[timer]&7).'
+    jailback-expired: '&7Время доступа к инвентарю возврата истекло.'
+    player-recently-exempted: '&7Игрок &5[player] &7был недавно освобождён.'
+
+sharpening:
+  failure: '&cПредмет потерял прочность (&4Провал&c).'
+  success: '&aПредмет улучшен (&2Успех&a).'
+  requiresLvl: '&cДля улучшения требуется &4{lvl} ур. &cопыта.'
+  title: '&cРуническое усиление'
+  broadcast: 'json: ["",{"text":"[","color":"dark_gray"},{"text":"!","color":"dark_red"},{"text":"] ","color":"dark_gray"},{"text":"{player}","bold":true,"color":"dark_red"},{"text":" усилил предмет руной с шансом ","color":"yellow"},{"text":"{chance}","bold":true,"color":"green"},{"text":"%: ","color":"yellow"},{"text":"[результат]","color":"dark_purple","hoverEvent":{"action":"show_item","value":"{id:{name},tag:{display:{Lore:{lore}}, ench:{enchantments}}}"}},{"text":".","color":"yellow"}]'
+summon-items:
+  label: 'TRPGSummon'
+  location-not-set: '&cЛокация для призыва не установлена.'
+  check-area: '&cНельзя активировать предмет здесь.'
+  summon-activated: '&aПризыв активирован. Время призыва &2{time}&ac.'
+  summon-cancelled: '&cПризыв отменён.'
+  summon-timing: '&dПризыв закончится через &5{time}&dс.'
+  summon-release: '&5Призыв завершён.'
+  summon-cooldown: '&cВы не можете использовать призыв ещё &4{time}&c.'
+  not-perms: '&cНет прав использовать этот призыв.'
+
+cargo-items:
+  label: 'CargoDelivery'
+  no-drop-location: '&8[&4TRPGCargo&8] &7Это не подходящее место для сброса. Ближайшая точка сброса: &8x:&5[X] &8y:&5[Y] &8z:&5[Z]&7 [[distance] м].'
+  tp-impossible: '&8[&4TRPGCargo&8] &7Телепортация &cневозможна &7с паком в инвентаре.'
+  cmd-impossible: '&8[&4TRPGCargo&8] &7Невозможно выполнение команды с паком в инвентаре.'
+  mount-impossible: '&8[&4TRPGCargo&8] &7Невозможно ездить верхом с паком в инвентаре.'
+  success-drop: '&8[&4TRPGCargo&8] &7Вы доставили пак и получили &a[amount]₮ &7на торговый баланс за доставку.'
+  
+pvp:
+  enabled: true
+  disabled-msg: '&7PVP-рейтинг временно отключен.'
+  label: 'TRPGRating'
+  info:
+  - ' &7=========== [funcPrefix] [&aПомощь по командам&8] &7==========='
+  - '&9&l> &e/&6pvp &7- &eПоказать ваш текущий рейтинг.'
+  - '&9&l> &e/&6pvp info &7- &eПоказать список доступных команд.'
+  - '&9&l> &e/&6pvp &e<&6lastkills&e/&6lk&e> &7- &eПоказать 5 ваших последних убийст.'
+  - '&9&l> &e/&6pvp top &7- &eПоказать топ-10 игроков по рейтингу.'
+  - '&9&l> &e/&6pvp reward &7- &eЗабрать награду, полученную за прошедшие сезоны.'
+  info-admin:
+  - '&4&l> &e/&6pvp zeroize &7- &eОбнулить рейтинг всех игроков на сервере.'
+  rating-increase: '&7Ваш pvp-рейтинг увеличился на &5[change][symbol]&7. Текущий рейтинг: &5[current][symbol]&7.'
+  rating-decrease: '&7Ваш pvp-рейтинг уменьшился на &5[change][symbol]&7. Текущий рейтинг: &5[current][symbol]&7.'
+  rating: '&7Ваш pvp-рейтинг: &6[current][symbol]&7.'
+  lastkills:
+    empty: '&7Список ваших последних убийств пуст.'
+    title: '  &7=========== [funcPrefix] [&a5 последних убийст&8] &7==========='
+    raw: '&9&l> &8[player]'
+  top:
+    lighter: '&d'
+    title: '  &7============= [funcPrefix] [&aТоп-10 игроков&8] &7============'
+    prize-raw: '&9&l> &6#%2d   &8+   &a%5d[symbol]   &8+   &c[lighter][player]'
+    raw: '&9&l> &e#%2d   &8+   &2%5d[symbol]   &8+   &4[lighter][player]'
+    self-raw: '&e&l> &c#%2d   &8+   &c%5d[symbol]   &8+   &bВы'
+    empty: '&7Топ-10 игроков пуст.'
+    little-rating: '&7Вы не участвуете в ивенте, так как ваш рейтинг меньше &5[minTopRating][symbol]&7.'
+  rewards:
+    received: '&7Вы забрали награду за призовое место в &aPVP-рейтинге&7.'
+    error: '&7У вас нет ожидающих наград.'
+auto-stop-server:
+  announce: '&e[&4Ardaeron&e] &2До рестарта сервера осталось: {H} ч. {M} мин. {S} сек.'
+
+expToBottle:
+  notEnoughExp: '&cУ вас недостаточно опыта, чтобы наполнить бутылку.'
+  notEnoughBottles: '&cВам нужны бутылки, чтобы наполнить их опытом.'
+  success: '&7Вы сконвертировали &a{exp}&7 ед. опыта. Получено: бутылка с опытом &5x{bottles}&7.'
+  
+  
+lightLevelingSystem:
+  symbol: '❁'
+  levelMenuTitle: '&0Дерево развития'
+  noFreePoints: '&cНедостаточно очков, чтобы улучшить этот навык.'
+  forbidden: '&cНельзя улучшить'
+  booster:
+    ended: '&e[&6XPBooster&e] &6Бонус к получению опыта истёк. Дополнительно вы получили &4{xpReceived}&6 ед. опыта.'
+    notify: '&e[&6XPBooster&e] &6Бонус к получению опыта (&c+{xpBoost}%&6) истечёт через {time}.'
+    time: '&c{H}&6 ч. &c{M}&6 мин.'
+    activate: '&e[&6XPBooster&e] &6Активировано ускоренное получение опыта &c+{xpBoost}%&6 на {time}'
+    impossible: '&e[&6XPBooster&e] &6Активация бустера невозможно из-за присутствия более сильного бонуса.'
+  description:
+    brief:
+      common:
+      - '&8Нераспределённые очки: &a{freePoints}{symbol}'
+      - '&8Ваша МОЩЬ: &a{powerLevel}⁂'
+      - ''
+      - '&8Сводка навыков'
+      trait: '&8{traitName}&8: &7[&9{ownLevel}&7/&9{threshold}&7]'
+    health:
+    - ''
+    - '&eТекущий бонус &7+{currentBonus} &6HP'
+    - '&eСледующее усиление &7+{boostValue} &6HP'
+    defense:
+    - ''
+    - '&eТекущий бонус &7+{currentBonus} &6DP'
+    - '&eСледующее усиление &7+{boostValue} &6DP'
+    attack:
+    - ''
+    - '&eТекущий бонус &7+{currentBonus} &6AP'
+    - '&eСледующее усиление &7+{boostValue} &6AP'
+    inspiration:
+    - ''
+    - '&eТекущий бонус &7+{currentBonus}% &6IP'
+    - '&eСледующее усиление &7+{boostValue}% &6IP'
+    common:
+      title: '&7&lНавык {title}'
+      level: '&8Текущий уровень &a({ownLevel}/{threshold})'
+      cost: '&8Стоимость улучшения &a{cost}{symbol}'
+      autoReward:
+      - ''
+      - '&9Автоматическая прокачка'
+      - '&b+{amount}&9 ур. &9каждые(й) &b{every}&9 ур.'
+      # Здесь вставка способности
+      immutable:
+      - '&eНе сбрасывается при потере уровней'
+      available:
+        'yes': '&aНажми ЛКМ, чтобы улучшить'
+        'no': '&4Будет доступно на {requiredLvl} ур. У вас {currentLvl} ур.'
+
+party:
+  label: 'TRPGParty'
+  help:
+    title: ' &7=========== {label} [&aПомощь по командам&8] &7==========='
+    default:
+    - '&9&l> &e/&6party create &e<&6название&e> &7- &eСоздать группу.'
+    - '&9&l> &e/&6party createrandom &7- &eСоздать группу со случайным названием.'
+    - '&9&l> &e/&6party leave &7- &eПокинуть текущую группу.'
+    - '&9&l> &e/&6party &e(&6chat&e/&6c&e) &7- &eПереключить чат на групповой/глобальный.'
+    - '&9&l> &e/&6party invite &e<&6игрок&e> &7- &eПригласить игрока в группу.'
+    - '&9&l> &e/&6party kick &e<&6игрок&e> &7- &eИсключить игрока из группы.'
+    - '&9&l> &e/&6party join &e<&6группа&e> &7- &eОтправить запрос на вступление в группу.'
+    - '&9&l> &e/&6party scoreboard &e(&6show&e/&6hide&e) &7- &eПоказать/Скрыть отображение группы.'
+    smoder:
+    - '&4&l> &e/&6party socialspy &7- &eВключить просмотр чата групп.'
+  charset: 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789'
+  info:
+  - 'Группа: {name} ({state})'
+  - 'Лидер: {owner}'
+  - 'Участники: {members}'
+  
+  randomGroupNames:
+  - 'STONKS'
+  - 'LeakyVirgins'
+  - 'AnalBoys'
+  - 'ShrekiOsel'
+  - 'SanaVerni100'
+  - 'SCP'
+  - 'Crusagers'
+  - 'Большевики'
+  - 'UweBolTeam'
+  - 'StartdustCrusaders'
+  - 'Custodii'
+  - 'MagnusNePredoval'
+  - 'KtoKogoEbet?'
+  - 'МужскоеГосударство'
+  - 'Vegas'
+  - 'Navalniy'
+  - 'FacebookSucks'
+  - 'Admini'
+  - 'Red'
+  - 'Blue'
+  - 'Green'
+  - 'Yellow'
+  - 'Purple'
+  - 'Brown'
+  - 'Pink'
+  
+  socialspy:
+    enable: '{label}&7 Режим шпиона &aактивирован&7.'
+    disable: '{label}&7 Режим шпиона &cдеактивирован&7.'
+  
+  alreadyHas: '{label}&7 У вас уже есть группа.'
+  noParty: '{label}&7 У вас нет группы.'
+  alreadyExists: '{label}&7 Группа &a{name}&7 уже существует.'
+  notFound: '{label}&7 Группа &a{name}&7 не найдена.'
+  kickYourself: '{label}&7 Вы не можете кикнуть себя.'
+  
+  nameLength: '{label}&7 Название должно содержать от &c{min}&7 до &c{max} &7символов.'
+  namePattern: '{label}&7 Название содержит недопустимые символы.'
+  created: '{label}&7 Группа создана: &a{name}&7.'
+  left: '{label}&7 Вы покинули группу &a{name}&7.'
+  
+  memberKicked: '{label}&7 Кикнут участник группы: &5{member}&7.'
+  noMember: '{label} &5{member}&7 не является участником вашей группы.'
+  notOwner: '{label}&7 Вы не являетесь владельцем группы.'
+  
+  playerHasParty: '{label}&7 У игрока &5{player}&7 уже есть группа.'
+  full: '{label}&7 В группе &a{name}&7 уже максимальное количество участников.'
+   
+  joinRequest: 'json: ["",{"text":"Игрок {player} отправил запрос на вступление в группу. "},{"text":"Принять","color":"green","clickEvent":{"action":"run_command","value":"{command}"}}]'
+  joinRequested: '{label}&7 Отправлен запрос на вступление в группу &a{name}&7.'
+    
+  joinAccept: '{label}&7 Вы приняли запрос игрока &5{player}&7.'
+  joinAccepted: '{label}&7 Вы были приняты в группу &a{name}&7.'
+    
+  joinDeny: '{label}&7 Вы отклонили запрос игрока &5{player}&7.'
+  joinDenied: '{label}&7 Запрос на вступление в группу &a{name}&7 отклюнен.'
+    
+  joinIgnore: '{label}&7 Вы не подтвердили запрос игрока &5{player}&7.'
+  joinIgnored: '{label}&7 Запрос на вступление в группу &a{name}&7 не подтвержден&7.'
+    
+    
+  inviteRequest: 'json: ["",{"text":"Игрок {player} отправил запрос на вступление в группу. "},{"text":"Принять","color":"green","clickEvent":{"action":"run_command","value":"{command}"}}]'
+  inviteRequested: '{label}&7 Отправлен запрос на вступление игроку &5{player}&7.'
+   
+  inviteAccept: '{label}&7 Вы приняли приглашение вступить в группу &a{name}&7.'
+  inviteAccepted: '{label}&7 Игрок &5{player}&7 принял приглашение&7.'
+    
+  inviteDeny: '{label}&7 Вы отклонили приглашение вступить в группу &a{name}&7.'
+  inviteDenied: '{label}&7 Игрок &5{player}&7 отклонил приглашение&7.'
+    
+  inviteIgnore: '{label}&7 Вы не подтвердили приглашение вступить в группу &a{name}&7.'
+  inviteIgnored: '{label}&7 Игрок &5{player}&7 не подтвердил вступление&7.'
+    
+    
+  ownerNotOnline: '{label}&7 Лидер группы &d{owner}&7 не онлайн, запрос невозможен.'
+  playerNotOnline: '{label}&7 Игрок {player} не онлайн, запрос невозможен.'
+  noRequests: '{label}&7 У вас нет ожидающих запросов от игрока {player}.'
+  alreadyRequsted: '{label}&7 Вы уже отправили запрос.'
+   
+  cannotChangeInDungeon: '{label}&7 Нельзя добавлять или удалять участников группы или выходить из группы, находясь в данже.'
+  ownerInDungeon: '{label}&7 Владелец группы &a{name}&7 сейчас в данже и не может принять запрос на вступление.'
+    
+  kicked: '{label}&7 Вы были кикнуты из группы &a{name}.'
+    
+  leaveAlert: '{label} &5{member}&7 покинул группу &a{name}&7.'
+  kickAlert: '{label} &5{member}&7 был кикнут из группы &a{name}&7.'
+  joinAlert: '{label} &5{member}&7 присоединился к группе &a{name}&7.'
+  disbandAlert: '{label}&7 Группа &a{name}&7 расформирована.'
+    
+  sidebar:
+    usage: '/{label} scoreboard keep/clear'
+    hidden: '{label}&7 Скорборд скрыт.'
+    shown: '{label}&7 Скорборд показан.'
+    alreadyShown: '{label}&7 Скорборд уже показан.'
+    alreadyHidden: '{label}&7 Скорборд уже скрыт.'
+   
+  list:
+    header: '&e<> Страница &6{page} &eиз &6{size} &e<>'
+    line: '&d{name} &2> &6{size} &7человек.'
+    empty: '&cНет групп на странице &6{page}&7.'
+    
+  opened: '{label}&7 Вы открыли группу.'
+  alreadyOpened: '{label}&7 Ваша группа открыта.'
+  closed: '{label}&7 Вы закрыли группу.'
+  alreadyClosed: '{label}&7 Ваша группа закрыта.'
+  cannotJoinClosed: '{label}&7 Вы не можете присоединиться к закрытой группе.'
+    
+  chatActivated: '{label}&7 Вы вошли в режим группового чата'
+  chatDeactivated: '{label}&7 Вы вышли из режима группового чата'
+    
+  chatMemberFormat: '&5[{party}] &a{player} &7> &2{message}'
+  chatOwnerFormat: '&5[{party}] &d{player} &7> &d{message}'
+  
+  
+  
+  
+  

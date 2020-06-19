@@ -1,0 +1,60 @@
+#ARROW_DAMAGE - Сила
+#ARROW_FIRE - Горящая стрела
+#ARROW_INFINITE - Бесконечность
+#ARROW_KNOCKBACK - Откидывание
+#DAMAGE_ALL - Острота
+#DAMAGE_ARTHROPODS - Гибель насекомых
+#DAMAGE_UNDEAD - Небесная кара
+#DIG_SPEED - Эффективность
+#DURABILITY - Прочность
+#FIRE_ASPECT - Заговор огня
+#KNOCKBACK - Отдача
+#LOOT_BONUS_BLOCKS - Удача
+#LOOT_BONUS_MOBS - Добыча
+#LUCK - Удача
+#LURE - Приманка
+#OXYGEN - Подводник
+#PROTECTION_ENVIRONMENTAL - Защита
+#PROTECTION_EXPLOSIONS - Взрывоустойчивость
+#PROTECTION_FALL - Невесомость
+#PROTECTION_FIRE - Огнеупорность
+#PROTECTION_PROJECTILE - Снарядостойкость
+#SILK_TOUCH - Шёлковое касание
+#THORNS - Шипы
+#WATER_WORKER -Подводное дыхание
+'1':
+  type: 'addAll'
+  from:
+    material: 'eye_of_ender'
+    data: 0
+    displayName: 'sword'
+    lore:
+    - 'lore1'
+    - 'lore2'
+    enchantments:
+    - 'DAMAGE_ALL=5'
+    - 'DURABILITY=3'
+  to:
+    lore:
+    - 'lore1'
+    - 'lore2'
+    enchantments:
+    - 'DAMAGE_ALL=8'
+    - 'DURABILITY=3'
+'2':
+  type: 'replaceAll'
+  from:
+    material: 'slime_ball'
+    data: 0
+    displayName: 'slime_ball'
+    enchantments:
+    - 'DURABILITY=1'
+  to:
+    material: 'ender_pearl'
+    data: 0
+    displayName: 'transformed slime ball'
+    lore:
+    - 'lore1'
+    - 'lore2'
+    enchantments:
+    - 'DURABILITY=3'

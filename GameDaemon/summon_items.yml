@@ -1,0 +1,12 @@
+'1':
+  type: 'PAPER:0'
+  globalCooldown: 20
+  warmup: 30
+  permission: 'gsm.summons.summon1'
+  location: 'teworld 924 178 318'
+  globalMessage:
+    start: '&9[&bВНИМАНИЕ&9] &cИгрок &4{player}&c начал призыв существа. Координаты: x:&4{X}&c y:&4{Y}&c z:&4{Z}&c. Время призыва: &4{S}&c сек.'
+    end: '&9[&bВНИМАНИЕ&9] &cИгрок &4{player}&c призвал существо на координатах x:&4{X}&c y:&4{Y}&c z:&4{Z}&c.'
+  hasGlobalMessage: true
+  summons:
+  - '/summon Villager 924 178 318 {CustomName:"[Н] Оружейник",Profession:5,Offers:{Recipes:[{maxUses:7,buy:{id:351,Count:64,Damage:4},buyB:{id:351,Count:64,Damage:4},sell:{id:5686,Count:1,tag:{display:{Name:Пушка}}}},{maxUses:50,buy:{id:351,Count:32,Damage:4},sell:{id:289,Count:1}},{maxUses:50,buy:{id:351,Count:32,Damage:4},sell:{id:5687,Count:1}},{maxUses:50,buy:{id:351,Count:64,Damage:4},sell:{id:322,Count:1}}]}}'

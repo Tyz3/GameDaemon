@@ -1,0 +1,30 @@
+#ARROW_DAMAGE - Сила
+#ARROW_FIRE - Горящая стрела
+#ARROW_INFINITE - Бесконечность
+#ARROW_KNOCKBACK - Откидывание
+#DAMAGE_ALL - Острота
+#DAMAGE_ARTHROPODS - Гибель насекомых
+#DAMAGE_UNDEAD - Небесная кара
+#DIG_SPEED - Эффективность
+#DURABILITY - Прочность
+#FIRE_ASPECT - Заговор огня
+#KNOCKBACK - Отдача
+#LOOT_BONUS_BLOCKS - Удача
+#LOOT_BONUS_MOBS - Добыча
+#LUCK - Удача
+#LURE - Приманка
+#OXYGEN - Подводник
+#PROTECTION_ENVIRONMENTAL - Защита
+#PROTECTION_EXPLOSIONS - Взрывоустойчивость
+#PROTECTION_FALL - Невесомость
+#PROTECTION_FIRE - Огнеупорность
+#PROTECTION_PROJECTILE - Снарядостойкость
+#SILK_TOUCH - Шёлковое касание
+#THORNS - Шипы
+#WATER_WORKER -Подводное дыхание
+'1':
+  item: 'IRON_HELMET;0;&bЖелезный шлем;{lore};{enchs};1'
+  lore:
+  - ''
+  enchants:
+  - ''

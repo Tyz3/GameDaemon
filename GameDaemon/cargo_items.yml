@@ -1,0 +1,12 @@
+'1':
+  type: 'LEATHER:0'
+  effects: 'SPEED:90:0'
+  dropPoints:
+    '1':
+      location: 'world 100 70 100'
+      salePrice: 10.0
+      dropRadius: 2
+    '2':
+      location: 'world 100 70 100'
+      salePrice: 13.0
+      dropRadius: 2

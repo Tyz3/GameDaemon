@@ -1,0 +1,12 @@
+'admin':
+  location: 'world 100 100 100'
+  owner: 'admin'
+  public: false
+  description: ''
+  whitelist: []
+  blacklist: []
+  fee: 10
+  bank: 0
+  visits: 0
+  weekOfYear: 10
+  

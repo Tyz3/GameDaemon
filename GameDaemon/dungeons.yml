@@ -1,0 +1,32 @@
+'1':
+  name: Проверочный данж
+  enabled: true
+  portal: world 52 5 375
+  returnSpawn: world 52.5 4 369.5
+  hologram: world 52.5 7.2 374.55
+  key: IRON_INGOT
+  reward: DIAMOND
+  joinCooldown: 20
+  heightOffset: 5
+  timeTopSize: 5
+  commands:
+  - '1-2: /summon Cow 52.0 {start:4} 378.5 {CustomName:"{lvl}Lv Корова1"}'
+  - '1,2: /summon Cow 53.0 {start:4} 378.5 {CustomName:"{lvl}Lv Корова2"}'
+  - '2  : /summon Cow 53.0 {start:4} 378.5 {CustomName:"{lvl}Lv Корова3"}'
+  levels:
+    '1':
+      enabled: true
+      time: 210
+    '2':
+      enabled: true
+      time: 210
+  spawn: world 52.5 4 376.5
+  region:
+  - world 55 375 49 381 4 8
+  wayback:
+  - world 52.5 5 381.5
+  layers:
+    '1':
+      enabled: true
+    '2':
+      enabled: true

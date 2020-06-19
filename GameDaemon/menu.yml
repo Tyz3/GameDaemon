@@ -1,0 +1,145 @@
+# All placeholders []: player,balance,joins,muted,jailed,kills,
+# deaths,dateFirstJoin,timePlayingSpent,rating,ipJoin,ipQuit,
+# dateJoin,dateQuit.
+#
+# ARROW_DAMAGE - Сила
+# ARROW_FIRE - Горящая стрела
+# ARROW_INFINITE - Бесконечность
+# ARROW_KNOCKBACK - Откидывание
+# DAMAGE_ALL - Острота
+# DAMAGE_ARTHROPODS - Гибель насекомых
+# DAMAGE_UNDEAD - Небесная кара
+# DIG_SPEED - Эффективность
+# DURABILITY - Прочность
+# FIRE_ASPECT - Заговор огня
+# KNOCKBACK - Отдача
+# LOOT_BONUS_BLOCKS - Удача
+# LOOT_BONUS_MOBS - Добыча
+# LUCK - Удача
+# LURE - Приманка
+# OXYGEN - Подводное дыхание
+# PROTECTION_ENVIRONMENTAL - Защита
+# PROTECTION_EXPLOSIONS - Взрывоустойчивость
+# PROTECTION_FALL - Невесомость
+# PROTECTION_FIRE - Огнеупорность
+# PROTECTION_PROJECTILE - Снарядостойкость
+# SILK_TOUCH - Шёлковое касание
+# THORNS - Шипы
+# WATER_WORKER - Подводник
+'main':
+  enabled: true
+  title: 'Main Menu'
+  isIndividual: true
+  elements:
+    'button1':
+      enabled: true
+      type: 'cmds'
+      item: 'STAINED_GLASS_PANE;0;&2item5;{lore};{enchantments};1'
+      lore: ['[player]']
+      enchantments: ['DAMAGE_ALL=2']
+      commands:
+      - 'setblock ~ ~ ~ 1'
+      position: 1
+    'headIcon1':
+      enabled: true
+      type: 'skull'
+      item: 'SKULL_ITEM;3;null;{lore};null;1'
+      lore: ['[player]']
+      position: 2
+    'icon1':
+      enabled: true
+      type: 'icon'
+      item: 'STAINED_GLASS_PANE;0;&2item7;null;null;1'
+      position: 3
+    'button3':
+      enabled: true
+      type: 'nextWay'
+      item: 'STAINED_GLASS_PANE;0;&2item8;null;null;1'
+      position: 5
+      nextWayLC: 'container2'
+      nextWayLSC: 'container3'
+    'boss1':
+      enabled: true
+      type: 'boss'
+      item: 'STAINED_GLASS_PANE;0;&2[{level}] boss1;{lore};null;1'
+      lore:
+      - '{worldBoss}'
+      - '&7Ступень босса: &a{stage}'
+      - '&7Кулдаун данжа: &aXX мин.'
+      - ''
+      - '&7Здоровье: &a{health} ед. {healthBoostRaw}'
+      - '&7Регенерация в бою: &a{regen}'
+      - '&7Сила атаки: &a{strength} {strengthBoostRaw}'
+      - '&7Задержка атаки: &aXXс'
+      - '&7Дебафф: &aотсутствует'
+      - ''
+      - '&7Сопротивление к дальнему урону: &aXX%'
+      - '&7Сопротивление к ближнему урону: &aXX%'
+      - ''
+      - '&7Боевые особенности:'
+      - '&9 - &aотсутствуют'
+      - ''
+      - '&7Минимальное кол-во игроков: &a{minPlayers}'
+      position: 6
+      level: 7
+      isWorldBoss: false
+      minPlayers: 1
+      nextWayLC: 'container2'
+      nextWayLSC: 'container3'
+    'mob1':
+      enabled: true
+      type: 'mob'
+      item: 'STAINED_GLASS_PANE;0;&2[{level}] mob1;{lore};null;1'
+      lore:
+      - '&7Ступень моба: &a{stage}'
+      - ''
+      - '&7Здоровье: &a{health} ед.'
+      - '&7Регенерация в бою: &a{regen}'
+      - '&7Сила атаки: &a{strength}'
+      - '&7Задержка атаки: &aXXс'
+      - '&7Дебафф: &aотсутствует'
+      - ''
+      - '&7Сопротивление к дальнему урону: &aXX%'
+      - '&7Сопротивление к ближнему урону: &aXX%'
+      position: 7
+      level: 7
+      minPlayers: 1
+      nextWayLC: 'container2'
+      nextWayLSC: 'container3'
+'container2':
+  title: '&2container2'
+  isIndividual: false
+  elements:
+    'button1':
+      type: 'cmds'
+      item: 'STAINED_GLASS_PANE;0;&2item1;null;null;1'
+      commands: []
+      position: 1
+      previousWay: 'main'
+    'icon1':
+      type: 'icon'
+      item: 'STAINED_GLASS_PANE;0;&2item2;null;null;1'
+      position: 2
+      previousWay: 'main'
+    'icon2':
+      type: 'icon'
+      item: 'STAINED_GLASS_PANE;0;&2item3;null;null;1'
+      position: 3
+      previousWay: 'main'
+    'button3':
+      type: 'nextWay'
+      item: 'STAINED_GLASS_PANE;0;&2item4;null;null;1'
+      position: 4
+      nextWayLC: 'container2'
+      nextWayLSC: 'container2'
+      previousWay: 'main'
+'container3':
+  title: 'container3'
+  isIndividual: false
+  elements:
+    'button1':
+      type: 'cmds'
+      item: 'STAINED_GLASS_PANE;0;&2item1;null;null;1'
+      commands: []
+      position: 1
+      previousWay: 'main'

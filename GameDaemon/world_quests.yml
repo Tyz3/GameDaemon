@@ -1,0 +1,96 @@
+# 
+# {type}_{id},{type}_{id}:откат в секундах
+configuration:
+  queue: []
+  updateTime: 5
+  enabled: true
+quests:
+  supplier:
+    '1':
+      name: Снабженец
+      hologram: world 80.5 6 350.5
+      duration: 30
+      description:
+      - Тебе нужно помочь империи продовольствием
+      - и ресурсами.
+      maxStatus: 200
+      cargoItems: []
+      rewards: []
+      areas:
+        '1':
+          center: world 59.5 2 355.5
+          diameter: 10
+          height: 10
+  miner:
+    '1':
+      name: Добытчик-1
+      hologram: world 85.5 6 350.5
+      duration: 40
+      description:
+      - Добудьте камень или булыжник в этой шахте.
+      - Её можно добыть только в этой области.
+      rewards: []
+      topSize: 10
+      topPlaces: 5
+      blocks:
+      - STONE
+      - COBBLESTONE
+      areas:
+        '1':
+          center: world 59.5 2 355.5
+          diameter: 10
+          height: 10
+    '2':
+      name: Добытчик-2
+      hologram: world 85.5 6 350.5
+      duration: 40
+      description:
+      - Добудьте камень или булыжник в этой шахте.
+      - Её можно добыть только в этой области.
+      rewards:
+      - LEATHER_BOOTS;0;А вот и твои лохмотья, мужик1;Кожаные@Поношенные;null;1
+      - LEATHER_BOOTS;0;А вот и твои лохмотья, мужик2;Кожаные@Поношенные;null;1
+      topSize: 10
+      topPlaces: 5
+      blocks:
+      - STONE
+      - COBBLESTONE
+      areas:
+        '1':
+          center: world 59.5 2 355.5
+          diameter: 10
+          height: 10
+  artisan:
+    '1':
+      name: Ремесленник
+      hologram: world 90.5 6 350.5
+      duration: 30
+      description:
+      - r32434rg5
+      - 123sdsad
+      rewards: []
+      topSize: 10
+      topPlaces: 5
+      filters:
+        '1':
+          handicraft: smith
+          stage: 3
+        '2':
+          handicraft: alchemy
+          stage: 2
+  mercenary:
+    '1':
+      name: Наёмник
+      hologram: world 95.5 6 350.5
+      duration: 200
+      topSize: 10
+      topPlaces: 5
+      description:
+      - r32434rg5
+      - 123sdsad
+      rewards: []
+      areas:
+        '1':
+          center: world 95.5 6 350.5
+          diameter: 30
+          height: 20

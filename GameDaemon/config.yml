@@ -1,0 +1,372 @@
+
+dungeons:
+  distance: 10.0
+  sessionTimeout: 60
+  saveShedulerTimeSeconds: 300
+  scoreboard:
+    text: 'Время: &4{m}:{s}'
+    score: 999
+
+cloudMail:
+  showNotificationEverySeconds: 60
+  saveDataEverySeconds: 60
+  clearOldMessagesEveryDays: 30
+  clearOldMailboxesEveryDays: 30
+  notification:
+    sound: 'ORB_PICKUP'
+    volume: 0.7
+    pitch: 1.25
+  compressData: false
+  
+  
+
+worldAnchors:
+  waitingPattern: '600,300,60'
+  warmupPattern: '30,20,10,3-1'
+  durationPattern: '600,500,400,300,200,100,60,30,10,1'
+  dolmenRadius: 24
+  checkTime: 60
+  minPlayersToStart: 3
+  waitingWarmup: 900
+  countdownToSummon: 30
+violations:
+  jail:
+    quest-cmd: 'noppes quest start [player] [questId]'
+    exempt-cmd: 'noppes quest stop [player] [questId]'
+    jailback-time: 600
+    jailback-title: 'Название инвентаря'
+    punish-levels:
+      '1':
+        quest-id: 1092
+        location: rpgworld 152 58 1390
+      '2':
+        quest-id: 1093
+        location: rpgworld 152 58 1390
+      '3':
+        quest-id: 1094
+        location: rpgworld 152 58 1390
+      '4':
+        quest-id: 1095
+        location: rpgworld 152 58 1390
+      '5':
+        quest-id: 1096
+        location: rpgworld 152 58 1390      
+    permissionsEx-group: 'imprisoned'
+  mutes:
+    # in seconds
+    timeFormat: '{H} ч. {M} мин. {S} сек.'
+    comboFormat: '&5x{combo}'
+    blockedCmds:
+    - '/msg'
+    timers:
+      f: 30
+      c: 20
+      mf: 360
+      po: 25
+      m: 120
+      or: 1440
+      od: 1800
+      p: 1800
+      r: 3360
+warps:
+  feeItem: 'IRON_INGOT'
+  # pex: gsm.warps.limits.default
+  regex: '[\d\w\#\@\+\=]+'
+  maxLength: 16
+  warpsOnPage: 6
+  fee:
+    set:
+      min: 0
+      max: 64
+    get:
+      min: 1
+      max: 256
+  allowedWorlds: ["world"]
+  configuredLimits:
+  # priority: high to low
+    polemarch:
+      whitelist: 20
+      blacklist: 20
+      totalLimit: 2
+      publicLimit: 1
+      privateLimit: 1
+    default:
+      whitelist: 20
+      blacklist: 20
+      totalLimit: 2
+      publicLimit: 1
+      privateLimit: 1
+  configuredTimers:
+  # priority: high to low
+    polemarch:
+      cooldown: 5
+      warmUp: 0
+    default:
+      cooldown: 10
+      warmUp: 2
+  
+  
+newbies:
+  # in seconds
+  expireTime: 43200
+  checkEvery: 10
+  particles:
+    speed: 10
+    amount: 10
+    xOffset: 0.5
+    yOffset: 0.5
+    zOffset: 0.5
+  
+auto-stop-server:
+  start-announce: '08:00,16:00,24:00'
+  delay: 3600
+  announce: '3600,1800,600,300,240,180,120,60,10-1'
+pvp:
+  enabled: true
+  worlds-enabled: ['world']
+  loyalty: 10
+  stable-bonus: 15
+  online-bonus: 20
+  pvp-point: 10
+  prizes-count: 3
+  top:
+    prize-places: 3
+    visible-places: 10
+    min-top-rating: 20
+cargo-items:
+  cmd-give-money: 'money give [player] [amount]'
+summon-items:
+  cooldown: 100
+  messageIn: '100,80,60,40,30,25,20,15,10,5-1'
+  summon-radius: 10
+sharpening:
+  materials: ['IRON_INGOT', 'DIAMOND']
+  separatorBetween: '>'
+  regex: '(&eШанс рунического усиления > )[0-9.]+%'
+  add: '&eШанс рунического усиления > {percentage}%'
+  minChanceToBroadcast: 6.25
+  levelsByChance:
+    '0': 100
+    '5': 50
+    '10': 25
+    '15': 12.5
+    '20': 6.25
+limitation-blocks:
+  DISPENSER: 4
+  DROPPER: 4
+  PISTON_BASE: 4
+  PISTON_STICKY_BASE: 4
+  WALL_SIGN: 16
+  SIGN_POST: 24
+  HOPPER: 4
+rpg-spawn:
+  first-point: 'Ферма'
+menu:
+  enabled: false
+  stages-range: 'I:1-9;II:10-24;III:25-35;IV:36-49;V:50-74;VI:75-89;VII:90-100'
+  formules:
+    boss:
+      I: {Health: '18*level*1.3^(minPlayers-1)', Strength: 'level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      II: {Health: '22*level*1.3^(minPlayers-1)', Strength: '1.25*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      III: {Health: '26*level*1.3^(minPlayers-1)', Strength: '1.25*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      IV: {Health: 'level^2*1.3^(minPlayers-1)', Strength: '1.5*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      V: {Health: 'level^2.1*1.3^(minPlayers-1)', Strength: '1.5*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      VI: {Health: 'level^2.2*1.3^(minPlayers-1)', Strength: '1.7*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      VII: {Health: 'level^2.3*1.3^(minPlayers-1)', Strength: '2*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+    mob:
+      I: {Health: '3*level*1.3^(minPlayers-1)', Strength: 'level/4*1.1^(minPlayers-1)', Regen: 'level/4'}
+      II: {Health: '6*level*1.3^(minPlayers-1)', Strength: 'level/3.5*1.1^(minPlayers-1)', Regen: 'level/4'}
+      III: {Health: '9*level*1.3^(minPlayers-1)', Strength: 'level/3*1.1^(minPlayers-1)', Regen: 'level/4'}
+      IV: {Health: '21*level*1.3^(minPlayers-1)', Strength: 'level/1.25*1.1^(minPlayers-1)', Regen: 'level/4'}
+      V: {Health: '30*level*1.3^(minPlayers-1)', Strength: 'level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      VI: {Health: '40*level*1.3^(minPlayers-1)', Strength: '1.25*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+      VII: {Health: '50*level*1.3^(minPlayers-1)', Strength: '1.5*level*1.1^(minPlayers-1)', Regen: 'level/4'}
+  
+mcmmo-boost:
+  items:
+  - 'IRON_INGOT:0;5'
+converter:
+  message: '&cУ вас недостаточно монет, чтобы обменять их.'
+  items:
+    TUTORIAL_TOKEN3:1:
+      message-to: '&2Вы обменяли &a64 медных &2монет на &a1 серебряную&2.'
+      message-back: '&2Вы обменяли &a1 серебряную &2монету на &a64 медных&2.'
+      to: TUTORIAL_TOKEN3:2
+    TUTORIAL_TOKEN3:2:
+      message-to: '&2Вы обменяли &a64 серебряных &2монет на &a1 золотую&2.'
+      message-back: '&2Вы обменяли &a1 золотую &2монету на &a64 серебряных&2.'
+      to: TUTORIAL_TOKEN3:3
+    TUTORIAL_TOKEN3:3:
+      message-to: '&2Вы обменяли &a64 золотых &2монет на &a1 алмазную&2.'
+      message-back: '&2Вы обменяли &a1 алмазную &2монету на &a64 золотых&2.'
+      to: TUTORIAL_TOKEN3:4
+    TUTORIAL_TOKEN3:4:
+      message-to: '&2Вы обменяли &a64 алмазных &2монет на &a1 отрывок карты сокровищ&2.'
+      message-back: '&2Вы обменяли &a1 отрывок карты сокровищ &2на &a64 алмазных
+        &2монет.'
+      to: TUTORIAL_ITM39:0
+expToBottle:
+  blocks: ['GRASS:0']
+  items:
+    'GLASS_BOTTLE:0':
+      exp: 15
+      output: EXP_BOTTLE:0
+    'TUTORIAL_EXPERIENCEBOTTLE:1':
+      exp: 400
+      output: TUTORIAL_EXPERIENCEBOTTLE:0
+    'TUTORIAL_EXPERIENCEBOTTLE:3':
+      exp: 1200
+      output: TUTORIAL_EXPERIENCEBOTTLE:2
+    'TUTORIAL_EXPERIENCEBOTTLE:5':
+      exp: 2400
+      output: TUTORIAL_EXPERIENCEBOTTLE:4
+intro:
+  startIntro: '&aВы приступили к обучению.'
+  end-intro-message: '&bИгрок &3[player] &bзавершил обучение за &3{H} &bч. &3{M} &bмин. &3{S} &bсек.{record}'
+  record: '&3[&5РЕКОРД&3]'
+  tp-changed: You Tp point was been set to farm.
+  cmd: rpg change [player] %location%
+  items-for-remove:
+  - TUTORIAL_SWORD161
+  - TUTORIAL_TUIHELM_LEATHER1
+  - TUTORIAL_TUICHEST_LEATHER1
+  - TUTORIAL_TUILEGS_LEATHER1
+  - TUTORIAL_TUIBOOTS_LEATHER1
+  - TUTORIAL_CLOTH29
+  - TUTORIAL_TECHNICITEM
+  - IRON_PICKAXE
+  - COBBLESTONE
+  - TUTORIAL_ITM45
+  - TUTORIAL_SWORD140
+  - CUSTOMNPCS_NPCFULLWOODENHEAD
+  - TUTORIAL_CLOTH33
+  - TUTORIAL_CLOTH35
+  - TUTORIAL_INGR2
+  - GLASS_BOTTLE
+  - EXP_BOTTLE
+  - POTION
+  - TUTORIAL_ARMOR03
+  - COAL
+  - TUTORIAL_ITEM51
+  - DYE
+  - TUTORIAL_ITEM53
+  - TUTORIAL_CLOTH16
+  - TUTORIAL_RUNE10
+  - TUTORIAL_ARMOR67HELM
+  - TUTORIAL_SEXY_SCROLL24
+
+faction-cmd: 'noppes faction [player] [factionId] [increaseMode] [points]'
+faction-items:
+  'TUTORIAL_INSPIRE1:0':
+    faction-id: 136
+    increase-mode: true
+    points: 20
+  'TUTORIAL_INSPIRE2:0':
+    faction-id: 136
+    increase-mode: true
+    points: 50
+  'TUTORIAL_INSPIRE3:0':
+    faction-id: 136
+    increase-mode: true
+    points: 250
+
+lightLevelingSystem:
+  boosterExpiresNotify: '900,600,300,60,30,10,5-1'
+  boosters:
+    '1':
+      type: eye_of_ender
+      data: 0
+      bonus: 1.5
+      duration: 100
+  maxLevel: 500
+  reward:
+    amount: 3
+    every: 5
+  options:
+    brief:
+      special: true
+      displayName: '&a&lПерсонаж'
+      menuPosition: 4
+      icon: 'golden_apple'
+      
+    
+    health:
+      displayName: '&cПовышенное здоровье'
+      icon: 'golden_apple'
+      menuPosition: 10
+      cost: 1
+      availableLevel: 0
+      threshold: 100
+      immutable: true
+      autoReward:
+        enable: false
+      
+      healthBoost: 1
+      
+    attack:
+      displayName: '&cСила удара'
+      icon: 'gold_sword'
+      menuPosition: 12
+      cost: 2
+      availableLevel: 0
+      threshold: 50
+      immutable: false
+      autoReward:
+        enable: false
+      
+      attackBoost: 1
+      
+    defense:
+      displayName: '&cПовышенная защита'
+      icon: 'gold_helmet'
+      menuPosition: 14
+      cost: -1
+      availableLevel: 40
+      threshold: 20
+      immutable: false
+      autoReward:
+        enable: true
+        amount: 1
+        
+      defenceBoost: 1
+    
+    inspiration:
+      displayName: '&cВдохновление'
+      icon: 'exp_bottle'
+      menuPosition: 16
+      cost: -1
+      availableLevel: 0
+      threshold: 20
+      immutable: false
+      autoReward:
+        enable: true
+        amount: 1
+        every: 1
+        
+      inspirationBoost: 0.01
+      
+  # gsm.lils.bonus.global
+  globalBonus: 1.5
+  configuredBonus:
+    # gsm.lils.bonus.<name>
+    polemarch: 1.75
+    alariy: 1.2
+
+party:
+  cleanAfterDays: 7
+  maxPlayers: 5
+  maxNameLength: 22
+  minNameLength: 2
+  namePattern: '[a-zA-Z0-9_]+'
+  requestTimeout: 60
+  scoreboard:
+    name: '[ &b{party} &f]'
+    colors:
+      onlineOwner: '&d'
+      offlineOwner: '&5'
+      onlineMember: '&a'
+      offlineMember: '&c'
+    healthDisplay: '&c❤'
+options:
+  stuffSynchronize: false
+  compressJson: false

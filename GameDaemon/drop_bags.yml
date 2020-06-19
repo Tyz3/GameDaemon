@@ -1,0 +1,59 @@
+# Example item: IRON_HELMET;0;&bЖелезный шлем;{lore};{enchantments};1
+'1':
+  type: full
+  bag: 'DIAMOND'
+  chest: true
+  displayName: 'Сундук 1'
+  drop:
+    '1':
+      item: 'IRON_HELMET;0;&bЖелезный шлем;{lore};null;1'
+      lore:
+      - 'описание1'
+      - 'описание2'
+      enchantments: []
+      hasBroadcast: true
+      chance: 50
+      amount: '1-1'
+    '2':
+      item: 'IRON_CHESTPLATE;0;&bЖелезный нагрудник;{lore};null;1'
+      lore:
+      - 'описание1'
+      enchantments: []
+      hasBroadcast: false
+      chance: 100
+      amount: '1-5'
+'2':
+  type: full
+  bag: 'BONE:0'
+  key: 'IRON_INGOT'
+  drop:
+    '1':
+      item: 'IRON_HELMET;0;&bЖелезный шлем;{lore};null;1'
+      lore:
+      - 'описание1'
+      - 'описание2'
+      enchantments: []
+      hasBroadcast: true
+      chance: 10
+      amount: '6-10'
+    '2':
+      item: 'IRON_CHESTPLATE;0;&bЖелезный нагрудник;{lore};null;1'
+      lore:
+      - 'описание1'
+      enchantments: []
+      hasBroadcast: false
+      chance: 10
+      amount: '1-5'
+'3':
+  type: once
+  bag: 'FEATHER:0'
+  # if item is a potion, then the field enchantments equals potion effects.
+  drop:
+    '1':
+      item: 'potion;0;&bЖелезный шлем;null;null;1'
+      enchantments:
+      - 'SPEED=100=2'
+      hasBroadcast: true
+      permission: gsm.drops.premium
+      chance: 10
+      amount: '6-10'
