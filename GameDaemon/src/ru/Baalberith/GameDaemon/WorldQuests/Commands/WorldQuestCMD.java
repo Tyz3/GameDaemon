@@ -121,6 +121,8 @@ public class WorldQuestCMD extends InstallationTemplate implements TabCompleter 
 		// Scores
 		TellRawText scores = new TellRawText();
 		
+		// sdsdsd
+		
 		// Coords
 		TellRawText coords = new TellRawText();
 		coords.addSeparator2();
