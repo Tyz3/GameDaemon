@@ -142,6 +142,10 @@ public abstract class WorldQuest {
 		public boolean check(String key, int value) {
 			return filters.containsKey(key) ? value >= filters.get(key) : false;
 		}
+		
+		public Map<String, Integer> getFilters() {
+			return filters;
+		}
 	}
 	
 	public boolean checkFilter(String key, int value) {

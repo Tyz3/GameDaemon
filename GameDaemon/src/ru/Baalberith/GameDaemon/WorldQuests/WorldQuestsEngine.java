@@ -3,6 +3,7 @@ package ru.Baalberith.GameDaemon.WorldQuests;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 
 import org.bukkit.Location;
@@ -16,6 +17,7 @@ import ru.Baalberith.GameDaemon.Extra.Installation.TellRawText;
 import ru.Baalberith.GameDaemon.Extra.Installation.TellRawText.ClickEvent;
 import ru.Baalberith.GameDaemon.Extra.Installation.TellRawText.Color;
 import ru.Baalberith.GameDaemon.Extra.Installation.TellRawText.Element;
+import ru.Baalberith.GameDaemon.Utils.ItemDaemon;
 import ru.Baalberith.GameDaemon.Utils.LocationManager;
 import ru.Baalberith.GameDaemon.WorldQuests.WorldQuest.WorldQuestType;
 import ru.Baalberith.GameDaemon.WorldQuests.Commands.WorldQuestCMD;
@@ -171,19 +173,22 @@ public class WorldQuestsEngine {
 		
 		WorldQuestCMD.getInstallPage(0).send(p, "{type}", wq.getType().name(), "{id}", wq.getId(), "{name}", wq.getName());
 		WorldQuestCMD.getInstallPage(1).send(p, "{duration}", String.valueOf(wq.getDuration()), "{location}", LocationManager.serializeLocation(wq.hologramLocation));
-	
+		
 		switch (wq.type) {
 		case artisan:
-			
+			ArtisanQuest aq = (ArtisanQuest) wq;
+			WorldQuestCMD.getInstallPage(14).send(p, "{size}", String.valueOf(aq.topSize), "{places}", String.valueOf(aq.topPlaces));
 			break;
 		case mercenary:
-			
+			MercenaryQuest mq = (MercenaryQuest) wq;
+			WorldQuestCMD.getInstallPage(15).send(p, "{size}", String.valueOf(mq.topSize), "{places}", String.valueOf(mq.topPlaces));
 			break;
 		case miner:
-			
+			MinerQuest miq = (MinerQuest) wq;
+			WorldQuestCMD.getInstallPage(16).send(p, "{size}", String.valueOf(miq.topSize), "{places}", String.valueOf(miq.topPlaces));
 			break;
 		case supplier:
-			// TODO
+			WorldQuestCMD.getInstallPage(17).send(p);
 			break;
 		default: break;
 		}
@@ -207,7 +212,7 @@ public class WorldQuestsEngine {
 	
 	// Вызывается когда нужно поставить portal, spawn, returnSpawn или обавить wayback.
 	public static void showCoordsChooseMenu(GDPlayer p, String type) {
-//		DungeonCMD.getInstallPage(15).send(p, "{type}", type);
+		WorldQuestCMD.getInstallPage(13).send(p, "{type}", type);
 	}
 	
 	// --->>>
@@ -381,12 +386,163 @@ public class WorldQuestsEngine {
 	
 	// Blocks
 	
+	public static void showBlocks(GDPlayer p) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		if (!(wq instanceof MinerQuest)) return;
+		
+		MinerQuest mq = (MinerQuest) wq;
+		
+		for (int i = 0; i < mq.getBlocks().size(); i++) {
+			WorldQuestCMD.getInstallPage(6).send(p, "{id}", String.valueOf(i), "{block}", ItemDaemon.toString(mq.getBlocks().get(i)));
+		}
+		WorldQuestCMD.getInstallPage(7).send(p);
+	}
+	
+	public static void newBlock(GDPlayer p, String src) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		if (!(wq instanceof MinerQuest)) return;
+		
+		MinerQuest mq = (MinerQuest) wq;
+		
+		mq.addBlock(ItemDaemon.fromString(src));
+
+		showMainPage(p);
+		showBlocks(p);
+	}
+	
+	public static void removeBLock(GDPlayer p, int id) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		if (!(wq instanceof MinerQuest)) return;
+		
+		MinerQuest mq = (MinerQuest) wq;
+		
+		mq.removeBlock(id);
+
+		showMainPage(p);
+		showBlocks(p);
+	}
+	
 	// Cargo items
+	
+	public static void showCargoItems(GDPlayer p) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		if (!(wq instanceof SupplierQuest)) return;
+		
+		SupplierQuest sq = (SupplierQuest) wq;
+		
+		for (int i = 0; i < sq.getCargoItems().size(); i++) {
+			WorldQuestCMD.getInstallPage(8).send(p, "{item}", ItemDaemon.toString(sq.getCargoItems().get(i)));
+		}
+		WorldQuestCMD.getInstallPage(9).send(p);
+	}
+	
+	public static void addCargoItem(GDPlayer p, String src) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		if (!(wq instanceof SupplierQuest)) return;
+		
+		SupplierQuest sq = (SupplierQuest) wq;
+		
+		sq.addCargoItem(ItemDaemon.fromString(src));
+
+		showMainPage(p);
+		showCargoItems(p);
+	}
+	
+	public static void removeCargoItem(GDPlayer p, int id) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		if (!(wq instanceof SupplierQuest)) return;
+		
+		SupplierQuest sq = (SupplierQuest) wq;
+		
+		sq.removeCargoItem(id);
+
+		showMainPage(p);
+		showCargoItems(p);
+	}
 	
 	// Filters
 	
+	public static void showFilters(GDPlayer p) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		for (Entry<String, Integer> e : wq.filter.getFilters().entrySet()) {
+			WorldQuestCMD.getInstallPage(10).send(p, "{name}", e.getKey(), "{level}", String.valueOf(e.getValue()));
+		}
+		WorldQuestCMD.getInstallPage(11).send(p);
+	}
+	
+	public static void addFilter(GDPlayer p, String key, Integer value) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		wq.addFilter(key, value);
+
+		showMainPage(p);
+		showFilters(p);
+	}
+	
+	public static void removeFilter(GDPlayer p, String key) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		wq.removeFilter(key);
+
+		showMainPage(p);
+		showFilters(p);
+	}
+	
 	// Scores
 	
+	public static void showScores(GDPlayer p) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		int place = 1;
+		for (Entry<String, Long> e : wq.getScores().entrySet()) {
+			WorldQuestCMD.getInstallPage(12).send(p, "{place}", String.valueOf(place), "{player}", e.getKey(), "{score}", String.valueOf(e.getValue()));			
+			place++;
+		}
+		WorldQuestCMD.getInstallPage(13).send(p);
+	}
+	
+	public static void removeScore(GDPlayer p, String player) {
+		if (!installers.containsKey(p)) return;
+		WorldQuest wq = installers.get(p);
+		if (wq == null) return;
+		
+		wq.getScores().remove(player);
+		
+		showMainPage(p);
+		showScores(p);
+	}
+	
 	// Scheduler
+	
+	public static void showQueue(GDPlayer p) {
+		// TODO
+	}
 	
 }

@@ -100,4 +100,17 @@ public class MinerQuest extends WorldQuest {
 		}
 		
 	}
+	
+	public List<ItemStack> getBlocks() {
+		return blocks;
+	}
+	
+	public void addBlock(ItemStack block) {
+		blocks.add(block);
+	}
+	
+	public void removeBlock(int id) {
+		if (blocks.size() <= id) return;
+		blocks.remove(id);
+	}
 }

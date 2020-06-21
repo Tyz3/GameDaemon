@@ -23,18 +23,19 @@ public class WorldQuestCMD extends InstallationTemplate implements TabCompleter 
 
 	@Override
 	public void reload() {
+		initialize(19);
 		
 		// 0
-		TellRawText mainHeaderON = new TellRawText();
-		mainHeaderON.addSeparator1();
-		Element m11 = mainHeaderON.createElement().setText("  Тип: &a{type}  ");
-		Element m12 = mainHeaderON.createElement().setText("  Ид: &a{id}  ");
-		Element m13 = mainHeaderON.createElement().setText("  Название: &a{name}  ");
-		Element m14 = mainHeaderON.createElement().setText("  ✎  ").setColor(Color.yellow).setClickEvent(ClickEvent.suggest_command, "/worldquests changename {name}").setTip("Изменить название");
-		Element m16 = mainHeaderON.createElement().setText("  ♲  ").setColor(Color.dark_red).setClickEvent(ClickEvent.suggest_command, "/worldquests remove {id}").setTip("Нажмите, чтобы удалить квест");
-		Element m17 = mainHeaderON.createElement().setText("  ☒  ").setColor(Color.aqua).setClickEvent(ClickEvent.run_command, "/worldquests uninstall").setTip("Закончить настройку квеста");
-		mainHeaderON.addLine(mainHeaderON.createLine(m11, m12, m13, m14, m16, m17));
-		addInstallPage(mainHeaderON);
+		TellRawText mainHeader = new TellRawText();
+		mainHeader.addSeparator1();
+		Element m11 = mainHeader.createElement().setText("  Тип: &a{type}  ");
+		Element m12 = mainHeader.createElement().setText("  Ид: &a{id}  ");
+		Element m13 = mainHeader.createElement().setText("  Название: &a{name}  ");
+		Element m14 = mainHeader.createElement().setText("  ✎  ").setColor(Color.yellow).setClickEvent(ClickEvent.suggest_command, "/worldquests changename {name}").setTip("Изменить название");
+		Element m16 = mainHeader.createElement().setText("  ♲  ").setColor(Color.dark_red).setClickEvent(ClickEvent.suggest_command, "/worldquests remove {id}").setTip("Нажмите, чтобы удалить квест");
+		Element m17 = mainHeader.createElement().setText("  ☒  ").setColor(Color.aqua).setClickEvent(ClickEvent.run_command, "/worldquests uninstall").setTip("Закончить настройку квеста");
+		mainHeader.addLine(mainHeader.createLine(m11, m12, m13, m14, m16, m17));
+		addInstallPage(mainHeader);
 		
 		// 1
 		TellRawText mainBody = new TellRawText();
@@ -116,14 +117,33 @@ public class WorldQuestCMD extends InstallationTemplate implements TabCompleter 
 		addInstallPage(newCargoItem);
 		
 		// Craft Filters
+		
+		// 10
 		TellRawText filters = new TellRawText();
+		Element f1 = filters.createElement().setText("  Название: §a{name}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests filter {id} name {name}").setTip("Изменить название");
+		Element f2 = filters.createElement().setText("  Уровень: §c{level}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests filter {id} level {level}").setTip("Изменить уровень");
+		Element f3 = filters.createElement().setText("  ♲  ").setColor(Color.dark_red).setClickEvent(ClickEvent.run_command, "/worldquests filter {id} remove").setTip("Удалить фильтр");
+		filters.addLine(filters.createLine(f1, f2, f3));
+		addInstallPage(filters);
+		
+		// 11
+		TellRawText newFilter = new TellRawText();
+		Element nf1 = newFilter.createElement().setText("  ").setText("  ✚  ").setColor(Color.dark_purple).setClickEvent(ClickEvent.run_command, "/worldquests filter new").setTip("Добавить фильтр");
+		newFilter.addLine(newFilter.createLine(nf1));
+		addInstallPage(newFilter);
 		
 		// Scores
-		TellRawText scores = new TellRawText();
 		
-		// sdsdsd
+		// 12
+		TellRawText scores = new TellRawText();
+		Element sc1 = scores.createElement().setText("  Место: §6{place}§r Ник: §a{player}§r Счёт: §d{score}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests scores {player} score {score}").setTip("Установить счёт игроку");
+		Element sc2 = scores.createElement().setText("  ♲  ").setColor(Color.dark_red).setClickEvent(ClickEvent.run_command, "/worldquests scores {player} remove").setTip("Удалить игрока из топа");
+		scores.addLine(scores.createLine(sc1, sc2));
+		addInstallPage(scores);
 		
 		// Coords
+		
+		// 13
 		TellRawText coords = new TellRawText();
 		coords.addSeparator2();
 		Element cr1 = coords.createElement().setText("  [Click]  ").setColor(Color.light_purple).setClickEvent(ClickEvent.run_command, "/worldquests coordsClick {type}").setTip("Указать координаты кликом ПКМ");
@@ -131,6 +151,52 @@ public class WorldQuestCMD extends InstallationTemplate implements TabCompleter 
 		coords.addLine(coords.createLine(cr1, cr2));
 		coords.addSeparator2();
 		addInstallPage(coords);
+		
+		// Custom modification
+		
+		// 14
+		TellRawText artisan = new TellRawText();
+		Element art1 = artisan.createElement().setText("  Top size: §a{size}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests top size {size}").setTip("Изменить размер топа");
+		Element art2 = artisan.createElement().setText("  Top places: §a{places}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests top places {places}").setTip("Изменить количество призовых мест");
+		Element art3 = artisan.createElement().setText("  Scores...  ").setClickEvent(ClickEvent.run_command, "/worldquests scores show").setColor(Color.aqua).setTip("Показать текущий топ игроков");
+		Element art4 = artisan.createElement().setText("  Filters...  ").setClickEvent(ClickEvent.run_command, "/worldquests filters show").setColor(Color.aqua).setTip("Изменить фильтры");
+		artisan.addLine(artisan.createLine(art1, art2, art3, art4));
+		addInstallPage(artisan);
+		
+		// 15
+		TellRawText mercenary = new TellRawText();
+		Element mer1 = mercenary.createElement().setText("  Top size: §a{size}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests top size {size}").setTip("Изменить размер топа");
+		Element mer2 = mercenary.createElement().setText("  Top places: §a{places}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests top places {places}").setTip("Изменить количество призовых мест");
+		Element mer3 = mercenary.createElement().setText("  Scores...  ").setClickEvent(ClickEvent.run_command, "/worldquests scores show").setColor(Color.aqua).setTip("Показать текущий топ игроков");
+		Element mer4 = mercenary.createElement().setText("  Areas...  ").setClickEvent(ClickEvent.run_command, "/worldquests areas show").setColor(Color.aqua).setTip("Изменить области выполнения");
+		mercenary.addLine(mercenary.createLine(mer1, mer2, mer3, mer4));
+		addInstallPage(mercenary);
+		
+		// 16
+		TellRawText miner = new TellRawText();
+		Element min1 = miner.createElement().setText("  Top size: §a{size}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests top size {size}").setTip("Изменить размер топа");
+		Element min2 = miner.createElement().setText("  Top places: §a{places}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests top places {places}").setTip("Изменить количество призовых мест");
+		Element min3 = miner.createElement().setText("  Scores...  ").setClickEvent(ClickEvent.run_command, "/worldquests scores show").setColor(Color.aqua).setTip("Показать текущий топ игроков");
+		Element min4 = miner.createElement().setText("  Areas...  ").setClickEvent(ClickEvent.run_command, "/worldquests areas show").setColor(Color.aqua).setTip("Изменить области выполнения");
+		Element min5 = miner.createElement().setText("  Blocks...  ").setClickEvent(ClickEvent.run_command, "/worldquests blocks show").setColor(Color.aqua).setTip("Изменить блоки для добычи");
+		miner.addLine(miner.createLine(min1, min2, min3, min4, min5));
+		addInstallPage(miner);
+		
+		// 17
+		TellRawText supplier = new TellRawText();
+		Element sup1 = supplier.createElement().setText("  Cargo items...  ").setClickEvent(ClickEvent.run_command, "/worldquests cargoitems show").setColor(Color.aqua).setTip("Изменить предметы для сдачи");
+		Element sup2 = supplier.createElement().setText("  Areas...  ").setClickEvent(ClickEvent.run_command, "/worldquests areas show").setColor(Color.aqua).setTip("Изменить области выполнения");
+		supplier.addLine(supplier.createLine(sup1, sup2));
+		addInstallPage(supplier);
+		
+		// 18
+		TellRawText queue = new TellRawText();
+		Element q1 = queue.createElement().setText("  Ид: §c{id}  ");
+		Element q2 = queue.createElement().setText("  Квесты: §a{quests}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests queue {id} change {quests}").setTip("Изменить запланированные квесты");
+		Element q3 = queue.createElement().setText("  Откат: §a{rollback}  ").setClickEvent(ClickEvent.suggest_command, "/worldquests queue {id} rollback {rollback}").setTip("Изменить откат");
+		Element q4 = queue.createElement().setText("  ♲  ").setColor(Color.dark_red).setClickEvent(ClickEvent.run_command, "/worldquests queue {id} remove").setTip("Удалить квесты из очереди");
+		queue.addLine(queue.createLine(q1, q2, q3, q4));
+		addInstallPage(queue);
 	}
 
 	@Override

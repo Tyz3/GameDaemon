@@ -109,4 +109,17 @@ public class SupplierQuest extends WorldQuest {
 
 	@Override
 	public void giveRewardsViaMail() { }
+	
+	public List<ItemStack> getCargoItems() {
+		return cargoItems;
+	}
+	
+	public void addCargoItem(ItemStack item) {
+		cargoItems.add(item);
+	}
+	
+	public void removeCargoItem(int id) {
+		if (cargoItems.size() <= id) return;
+		cargoItems.remove(id);
+	}
 }
